@@ -20,16 +20,16 @@ Using below listed steps, you can easily integrate your mobile/web payment appli
 
 ![alt tag](https://github.com/nohup-atulparmar/payeezy_js/raw/master/example/get_start_with_payeezy.png)
 
-For more information on getting started, visit  [get_start_with_payeezy guide] (https://github.com/payeezy/get_started_with_payeezy/raw/master/get_started_with_payeezy042015.pdf)
+For more information on getting started, visit  [get_start_with_payeezy guide] (https://github.com/payeezy/get_started_with_payeezy/blob/master/get_started_with_payeezy042015.pdf) or [download](https://github.com/payeezy/get_started_with_payeezy/raw/master/get_started_with_payeezy042015.pdf)
 
 # Testing - Payeezy {SANDBOX region}
-For test credit card,eCheck,GiftCard please refer to [test data](https://github.com/payeezy/testing_payeezy/raw/master/payeezy_testdata042015.pdf)
+For test credit card,eCheck,GiftCard please refer to [test data ](https://github.com/payeezy/testing_payeezy/blob/master/payeezy_testdata042015.pdf) or [download] (https://github.com/payeezy/testing_payeezy/raw/master/payeezy_testdata042015.pdf)
 
-# Handling Errors - Payeezy {SANDBOX/PROD region}
-For HTTP status code, API Error codes and error description please refer to [API error code ](https://developer.payeezy.com/payeezy-api-reference/apis) and select API
+# Error code/response - Payeezy {SANDBOX/PROD region}
+For HTTP status code, API Error codes and error description please refer to [API error code ](https://developer.payeezy.com/payeezy_new_docs/apis) and select your API
 
 #Questions?
-We're always happy to help with code or other questions you might have! Check out [form page](https://developer.payeezy.com/forum) or call us. 
+We're always happy to help with code or other questions you might have! Check out [FAQ page](https://developer.payeezy.com/faq-page) or call us. 
 
 ## Contributing
 1. Fork it 
