@@ -10,6 +10,8 @@ User Action: Buyer does a checkout on the merchant hosted site by clicking on bu
 
 NOTE: The merchant/third party is responsible for PCI compliance and may be required to provide First Data with additional documentation and/or their attestation of compliance
 
+# Payeezy supported language
+Java, PHP, Python,Ryby, nodeJS and Curl. 
 
 # Getting Started with Payeezy
 Using below listed steps, you can easily integrate your mobile/web payment application with Payeezy APIs and go LIVE!
