@@ -1,0 +1,9 @@
+{
+	"transaction_type": "cashout",
+	"method": "valuelink",
+	"valuelink": {
+		"cardholder_name": "Joe Smith",
+		"cc_number": "7777045839985463",
+		"credit_card_type": "Gift"
+	}
+}

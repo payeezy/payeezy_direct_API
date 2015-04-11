@@ -1,0 +1,14 @@
+{
+  "merchant_ref": "Astonishing-Sale",
+  "transaction_type": "purchase",
+  "method": "credit_card",
+  "amount": "1299",
+  "currency_code": "USD",
+  "credit_card": {
+    "type": "visa",
+    "cardholder_name": "John Smith",
+    "card_number": "4788250000028291",
+    "exp_date": "1020",
+    "cvv": "123"
+  }
+}

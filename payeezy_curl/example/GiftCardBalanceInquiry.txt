@@ -1,0 +1,9 @@
+{
+	"transaction_type": "balance_inquiry",
+	"method": "valuelink",
+	"valuelink": {
+		"cardholder_name": "Joe Smith",
+		"cc_number": "7777045236850450",
+		"credit_card_type": "Gift"
+	}
+}

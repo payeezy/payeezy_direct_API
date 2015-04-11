@@ -1,0 +1,65 @@
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 51 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\TransactionResponse.java
+Starting at line 22 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\Transaction.java
+Starting at line 133 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\GatewayResponse.java
+
+	}
+	public String getCc_expiry() {
+		return cc_expiry;
+	}
+	public void setCc_expiry(String cc_expiry) {
+		this.cc_expiry = cc_expiry;
+	}
+	public String getTransaction_type() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 75 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\TransactionResponse.java
+Starting at line 28 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\Transaction.java
+Starting at line 91 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\GatewayResponse.java
+
+	}
+	public String getCc_number() {
+		return cc_number;
+	}
+	public void setCc_number(String cc_number) {
+		this.cc_number = cc_number;
+	}
+	public String getTransaction_state() {
+=====================================================================
+Found a 8 line (26 tokens) duplication in the following files: 
+Starting at line 16 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\Transaction.java
+Starting at line 97 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\GatewayResponse.java
+
+	}
+	public String getCardholder_name() {
+		return cardholder_name;
+	}
+	public void setCardholder_name(String cardholder_name) {
+		this.cardholder_name = cardholder_name;
+	}
+	public String getCc_expiry() {
+=====================================================================
+Found a 8 line (25 tokens) duplication in the following files: 
+Starting at line 57 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\TransactionResponse.java
+Starting at line 67 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\GatewayResponse.java
+
+	}
+	public String getTransaction_type() {
+		return transaction_type;
+	}
+	public void setTransaction_type(String transaction_type) {
+		this.transaction_type = transaction_type;
+	}
+	public GatewayResponse getGateway_response() {
+=====================================================================
+Found a 7 line (25 tokens) duplication in the following files: 
+Starting at line 11 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\Transaction.java
+Starting at line 68 of C:\work\workspace\firstapi-client\src\main\java\com\firstdata\firstapi\client\domain\GatewayResponse.java
+
+	public String getTransaction_type() {
+		return transaction_type;
+	}
+	public void setTransaction_type(String transaction_type) {
+		this.transaction_type = transaction_type;
+	}
+	public String getCardholder_name() {

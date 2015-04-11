@@ -1,0 +1,14 @@
+{
+  "method": "tele_check",
+  "transaction_type": "refund",
+  "amount": "10",
+  "currency_code": "USD",
+  "transaction_tag": "{transaction_tag}",
+  "billing_address": {
+    "street": "225 Liberty Street",
+    "city": "NYC",
+    "state_province": "NY",
+    "zip_postal_code": "10281",
+    "country": "US"
+  }
+}

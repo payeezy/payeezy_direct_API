@@ -1,0 +1,12 @@
+{
+	"amount": "300",
+	"transaction_type": "void",
+	"transaction_tag": "{transaction_tag}",
+	"method": "valuelink",
+	"currency_code": "USD",
+	"valuelink": {
+		"cardholder_name": "Joe Smith",
+		"cc_number": "7777045839985463",
+		"credit_card_type": "Gift"
+	}
+}

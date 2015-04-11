@@ -1,0 +1,8 @@
+{
+	"merchant_ref": "Astonishing-Sale",
+	"transaction_tag": "{transaction_tag}",
+	"transaction_type": "void",
+	"method": "credit_card",
+	"amount": "1299",
+	"currency_code": "USD"
+}

@@ -1,0 +1,12 @@
+{
+	"amount": "6000",
+	"transaction_type": "activation",
+	"method": "valuelink",
+	"currency_code": "USD",
+	"valuelink": {
+		"cardholder_name": "Joe Smith",
+		"cc_number": "7777045839985463",
+		"credit_card_type": "Gift",
+		"card_cost": "5"
+	}
+}

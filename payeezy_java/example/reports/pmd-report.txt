@@ -1,0 +1,362 @@
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:29:	Use explicit scoping instead of the default package private level
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:30:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:36:	Variables that are final and static should be all capitals, 'log' is not all capitals.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:38:	Parameter 'value' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:42:	Parameter 'appId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:42:	Parameter 'secureId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:43:	Local variable 'buff' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:43:	StringBuffer constructor is initialized with size 16, but has at least 148 characters appended.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:46:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:47:	Local variable 'currentTime' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:48:	Avoid variables with short names like md
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:48:	Local variable 'md' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:49:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:49:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:49:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:49:	Useless parentheses.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:49:	Useless parentheses.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:52:	Local variable 'digest' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:52:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:54:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:55:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:55:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:56:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:56:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:57:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:57:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:58:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:58:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:59:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:59:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:60:	Avoid appending characters as strings in StringBuffer.append.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:60:	StringBuffer (or StringBuilder).append is called 2 consecutive times with literal Strings. Use a single append with a single combined String.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:62:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:65:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:66:	Avoid throwing raw exception types.
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:66:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:69:	Parameter 'appId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:69:	Parameter 'securityKey' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:70:	Local variable 'encriptedKey' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:71:	Local variable 'header' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Avoid variables with short names like m
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Avoid variables with short names like t
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Parameter 'm' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Parameter 'method' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Parameter 't' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:75:	Parameter 'url' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:77:	Local variable 'request' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:78:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:78:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:79:	Local variable 'response' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:80:	The String literal "*************************************" appears 4 times in this file; the first occurrence is on line 80
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:81:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:83:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:85:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:85:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:88:	A method should have only one exit point, and that should be the last statement in the method
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:88:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:91:	Potential violation of Law of Demeter (object not created locally)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:96:	Parameter 'merchant' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:97:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:98:	Local variable 'merchantUrl' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:102:	Parameter 'trans' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:105:	Potential violation of Law of Demeter (method chain calls)
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:107:	Local variable 'transactionUrl' could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:116:	Parameter 'url' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:124:	Parameter 'appId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/FirstAPIClientHelper.java:132:	Parameter 'secureId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:1:	This class has a bunch of public methods and attributes
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:3:	Too many fields
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:5:	Comment is too large: Line too long
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:7:	Avoid excessively long variable names like partial_redemption
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'partial_redemption' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'exact_message' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gateway_id' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:10:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cvd_presence_ind' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:11:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'sequence_no' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:12:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_error' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:13:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:14:	Avoid excessively long variable names like transaction_approved
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:14:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_approved' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:15:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:16:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'exact_resp_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:17:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:18:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:19:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'bank_message' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:20:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'client_ip' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:21:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'bank_resp_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:23:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_province' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:24:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:25:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'authorization_num' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:26:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_tag' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:27:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_country' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:28:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'retrieval_ref_no' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:29:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'currency_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:31:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'credit_card_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:32:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:35:	Avoid excessively long variable names like partial_redemption
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:35:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:35:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'partial_redemption' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:35:	Parameter 'partial_redemption' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:38:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:41:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:41:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'exact_message' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:41:	Parameter 'exact_message' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:44:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:47:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:47:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gateway_id' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:47:	Parameter 'gateway_id' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:50:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:53:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:53:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cvd_presence_ind' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:53:	Parameter 'cvd_presence_ind' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:56:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:59:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:59:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'sequence_no' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:59:	Parameter 'sequence_no' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:62:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:65:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:65:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_error' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:65:	Parameter 'transaction_error' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:68:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:71:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:71:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:71:	Parameter 'transaction_type' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:74:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:77:	Avoid excessively long variable names like transaction_approved
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:77:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:77:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_approved' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:77:	Parameter 'transaction_approved' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:80:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:83:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:83:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:83:	Parameter 'merchant_name' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:86:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:89:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:89:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'exact_resp_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:89:	Parameter 'exact_resp_code' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:92:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:95:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:95:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:95:	Parameter 'cc_number' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:98:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:101:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:101:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:101:	Parameter 'cardholder_name' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:104:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:107:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:107:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'bank_message' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:107:	Parameter 'bank_message' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:110:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:113:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:113:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'client_ip' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:113:	Parameter 'client_ip' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:116:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:119:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:119:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'bank_resp_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:119:	Parameter 'bank_resp_code' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:125:	Parameter 'amount' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:128:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:131:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:131:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_province' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:131:	Parameter 'merchant_province' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:134:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:137:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:137:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:137:	Parameter 'cc_expiry' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:140:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:143:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:143:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'authorization_num' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:143:	Parameter 'authorization_num' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:146:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:149:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:149:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_tag' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:149:	Parameter 'transaction_tag' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:152:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:155:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:155:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'merchant_country' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:155:	Parameter 'merchant_country' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:158:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:161:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:161:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'retrieval_ref_no' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:161:	Parameter 'retrieval_ref_no' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:164:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:167:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:167:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'currency_code' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:167:	Parameter 'currency_code' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:173:	Parameter 'ctr' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:176:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:179:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:179:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'credit_card_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/GatewayResponse.java:179:	Parameter 'credit_card_type' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:1:	This class has a bunch of public methods and attributes
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:3:	Too many fields
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:13:	Avoid excessively long variable names like homeAddressZipcode
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:14:	Avoid excessively long variable names like merchantCategoryCode
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:18:	Avoid excessively long variable names like productsAndServices
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:24:	Avoid excessively long variable names like deliveryTime15to30
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:25:	Avoid excessively long variable names like deliveryTimeover30
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:29:	Avoid excessively long variable names like checkingAcctNumber
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:35:	Avoid excessively long variable names like primaryEmailAddress
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:36:	Avoid excessively long variable names like primaryPhoneNumber
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:38:	Avoid excessively long variable names like foreignPersonOrEntity
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:39:	Avoid excessively long variable names like anticipatedAnnualSales
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:42:	Avoid unnecessary constructors - the compiler will generate these for you
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:43:	Comment is too large: Too many lines
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:86:	Parameter 'busAddressLine1' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:94:	Parameter 'busAddressLine2' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:102:	Parameter 'busAddressCity' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:110:	Parameter 'busAddressState' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:118:	Parameter 'busAddressZipcode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:126:	Parameter 'homeAddressLine1' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:134:	Parameter 'homeAddressLine2' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:142:	Parameter 'homeAddressCity' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:150:	Parameter 'homeAddressState' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:158:	Avoid excessively long variable names like homeAddressZipcode
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:158:	Parameter 'homeAddressZipcode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:166:	Avoid excessively long variable names like merchantCategoryCode
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:166:	Parameter 'merchantCategoryCode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:174:	Parameter 'middleName' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:182:	Parameter 'typicalSaleAmount' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:190:	Parameter 'ssn' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:198:	Avoid excessively long variable names like productsAndServices
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:198:	Parameter 'productsAndServices' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:206:	Parameter 'highestTicketSale' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:214:	Parameter 'incorporatedState' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:222:	Parameter 'organizationType' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:230:	Parameter 'deliveryTime0to7' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:238:	Parameter 'deliveryTime8to14' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:246:	Avoid excessively long variable names like deliveryTime15to30
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:246:	Parameter 'deliveryTime15to30' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:254:	Avoid excessively long variable names like deliveryTimeover30
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:254:	Parameter 'deliveryTimeover30' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:262:	Parameter 'employerIdNumber' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:270:	Parameter 'businessStartDate' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:278:	Parameter 'businessWebsite' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:286:	Avoid excessively long variable names like checkingAcctNumber
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:286:	Parameter 'checkingAcctNumber' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:294:	Parameter 'dateOfBirth' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:302:	Parameter 'dbaName' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:310:	Parameter 'refCode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:318:	Parameter 'firstName' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:326:	Parameter 'lastName' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:334:	Avoid excessively long variable names like primaryEmailAddress
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:334:	Parameter 'primaryEmailAddress' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:342:	Avoid excessively long variable names like primaryPhoneNumber
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:342:	Parameter 'primaryPhoneNumber' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:350:	Parameter 'abaRoutingNumber' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:358:	Avoid excessively long variable names like foreignPersonOrEntity
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:358:	Parameter 'foreignPersonOrEntity' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:366:	Avoid excessively long variable names like anticipatedAnnualSales
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:366:	Parameter 'anticipatedAnnualSales' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Merchant.java:374:	Parameter 'legalBusinessName' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:7:	Comment is too large: Line too long
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:11:	Avoid variables with short names like id
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:36:	Avoid variables with short names like id
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:36:	Parameter 'id' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:39:	Parameter 'status' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:42:	Parameter 'trackingId' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:45:	Parameter 'errorCode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:48:	Parameter 'refCode' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/MerchantResponse.java:51:	Parameter 'className' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:4:	Comment is too large: Line too long
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:6:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:7:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:8:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:9:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:11:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:14:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:14:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:14:	Parameter 'transaction_type' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:17:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:20:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:20:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:20:	Parameter 'cardholder_name' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:23:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:26:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:26:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:26:	Parameter 'cc_expiry' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:29:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:32:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:32:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:32:	Parameter 'cc_number' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/Transaction.java:38:	Parameter 'amount' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:9:	Comment is too large: Line too long
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:11:	Comment is too large: Line too long
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:17:	Avoid variables with short names like id
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:18:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'update_id' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:19:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:20:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:21:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gateway_response' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:21:	Use explicit scoping instead of the default package private level
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:25:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:26:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_state' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:27:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:31:	Parameter 'timestamp' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:37:	Parameter 'amount' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:43:	Avoid variables with short names like id
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:43:	Parameter 'id' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:46:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:49:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:49:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'update_id' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:49:	Parameter 'update_id' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:52:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:55:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:55:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_expiry' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:55:	Parameter 'cc_expiry' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:58:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:61:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:61:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_type' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:61:	Parameter 'transaction_type' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:64:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:67:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:67:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'gateway_response' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:67:	Parameter 'gateway_response' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:73:	Parameter 'className' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:76:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:79:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:79:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cc_number' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:79:	Parameter 'cc_number' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:82:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:85:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:85:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'transaction_state' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:85:	Parameter 'transaction_state' is not assigned and could be declared final
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:88:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:91:	Method names should not contain underscores
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:91:	Only variables that are final should contain underscores (except for underscores in standard prefix/suffix), 'cardholder_name' is not final.
+src/main/java/com/firstdata/firstapi/client/domain/TransactionResponse.java:91:	Parameter 'cardholder_name' is not assigned and could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:21:	Avoid unused private fields such as 'restTemplate'.
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:24:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:26:	Local variable 'merchant' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:68:	Local variable 'trasnaction' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:77:	JUnit tests should not contain more than 1 assert(s).
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:78:	Local variable 'merchant' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:79:	Local variable 'response' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:80:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:81:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:81:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:82:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:82:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:83:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:83:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:84:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:84:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:85:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:85:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:86:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:86:	Potential violation of Law of Demeter (object not created locally)
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:92:	Local variable 'trans' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:93:	Local variable 'response' could be declared final
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:94:	System.out.print is used
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:95:	JUnit assertions should include a message
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:99:	Comment is too large: Line too long
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:100:	Comment is too large: Line too long
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:103:	Comment is too large: Too many lines
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:112:	Comment is too large: Line too long
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:115:	Comment is too large: Line too long
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:129:	Comment is too large: Too many lines
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:138:	Comment is too large: Line too long
+src/test/java/com/firstdata/firstapi/client/FirstDataAPIClientTest.java:149:	Comment is too large: Line too long

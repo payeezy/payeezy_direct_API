@@ -1,0 +1,33 @@
+{              
+"method": "tele_check",
+"transaction_type": "purchase",
+"amount": "10",
+"currency_code": "USD",
+"tele_check":
+{   
+    "check_number": "0101",
+    "check_type": "C",
+    "routing_number":"BN1234567801234567890",
+    "account_number": "I7101874",
+    "accountholder_name": "Tom Eck",
+    "customer_id_type":"1",
+    "customer_id_number":"7623786df",
+    "client_email":"rajan.veeramani@firstdata.com",
+    "gift_card_amount":"100",
+    "vip":"n",
+    "clerk_id":"RVK_001",
+    "device_id":"jkhsdfjkhsk",
+    "release_type":"X",
+    "registration_number":"12345",
+    "registration_date":"01012014",
+    "date_of_birth":"01012010"
+},
+    "billing_address":
+{   
+    "street": "225 Liberty Street",
+    "city": "NYC",
+    "state_province": "NY",
+    "zip_postal_code": "10281",
+    "country": "US"
+}
+}

@@ -1,0 +1,28 @@
+{
+  "name": "payeezy",
+  "version": "1.0.0",
+  "private": "true",
+  "description": "Integrate with Payeezy",
+  "main": "lib/payeezy.js",
+   "repository": {
+    "type": "git",
+    "url": "git://git.com/"
+  },
+  "keywords": [
+    "firstdata",
+    "payeezy"
+  ],
+  "dependencies": {
+    "q": "~1.0.1",
+    "crypto-js": "3.1.2"
+  },
+  "engines": {
+    "node": ">= v0.10.26"
+  },
+  "author": {
+    "name": "Rajan Veeramani",
+    "email": "rajan.veeramani@firstdata.com"
+  },
+  "license": "ISC",
+  "readme": ""
+}
