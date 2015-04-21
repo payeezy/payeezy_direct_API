@@ -20,7 +20,7 @@ Using below listed steps, you can easily integrate your mobile/web payment appli
 *	ADD MERCHANTS 
 *	LIVE!
 
-![alt tag](https://github.com/nohup-atulparmar/payeezy_js/raw/master/example/get_start_with_payeezy.png)
+![alt tag](https://github.com/payeezy/get_started_with_payeezy/raw/master/payeezy_flow_diagram.png)
 
 For more information on getting started, visit  [get_start_with_payeezy guide] (https://github.com/payeezy/get_started_with_payeezy/blob/master/get_started_with_payeezy042015.pdf) or [download](https://github.com/payeezy/get_started_with_payeezy/raw/master/get_started_with_payeezy042015.pdf)
 
