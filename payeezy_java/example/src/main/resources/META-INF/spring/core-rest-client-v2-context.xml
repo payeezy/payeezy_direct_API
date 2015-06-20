@@ -1,57 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-    <!-- <bean id="jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />-->
-    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
-        <property name="messageConverters">
-            <list>
-                <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"></bean>
-                <bean class="org.springframework.http.converter.FormHttpMessageConverter" />
-                <!-- <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-                 </bean> -->
-                
-                <!--<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>-->
-                <!-- <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
-                 <bean class="org.springframework.http.converter.json.StringHttpMessageConverter"/>-->
-            </list>
-            
-        </property>
-        <!-- for authentication -->
-        <property name="requestFactory" >
-            <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory" >
-                
-            </bean>
-        </property>
-        
-        <!-- <constructor-arg ref="httpComponentsClientHttpRequestFactory"/>-->
-    </bean>
-    
-    <!-- <bean id="jacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
-     <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-	    <property name="targetObject" ref="jacksonObjectMapper" />
-	    <property name="targetMethod" value="configure" />
-	    <property name="arguments">
-     <list>
-     <value type="org.codehaus.jackson.map.DeserializationConfig.Feature">WRITE_NULL_PROPERTIES</value>
-     <value>false</value>
-     </list>
-	    </property>
-     </bean>-->
-    
-    <!-- CERT -->
-    <bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">
-        <property name="url" value="https://api-cert.payeezy.com/v1" />
-        
-        <property name="appId" value="y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a" />
-        <property name="securedSecret" value="86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7" />
-        <property name="token" value="fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6" />
-        <property name="ta_token" value="123" />
-    </bean> 
-    
-    
-    <!-- <http>
-     <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" requires-channel="https"/>      
-     <http-basic/></http> -->
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+		<property name="messageConverters">
+			<list>
+				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"></bean>
+				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
+				<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+			</list>
+		
+		</property>
+		<!-- for authentication -->
+		<property name="requestFactory" >
+			<bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory" >
+			</bean>
+		</property>
+	
+	</bean>
+
+
+	<!-- CERT -->
+<!-- 	<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
+		<property name="url" value="https://api-cert.payeezy.com/v1" />
+		
+		 
+		<property name="appId" value="y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a" />
+		<property name="securedSecret" value="86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7" />
+		<property name="token" value="fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6" />
+	</bean> -->
+	
+	<!-- CAT -->
+		<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
+		<property name="url" value="https://api-cat.payeezy.com/v1" />
+		
+		 
+		<property name="appId" value="bA8hIqpzuAVW6itHqXsXwSl6JtFWPCA0" />
+		<property name="securedSecret" value="86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7" />
+		<property name="token" value="fdoa-a480ce8951daa73262734cf102641994abc7643456k02b6" />
+	</bean>
+	<!-- fdoa-a480ce8951daa73262734cf102641994abc7643456k02b6
+fdoa-a480ce8951daa82062734cf102641994c1e67123456k02b6
+fdoa-a480ce8951daa73262734cf102641994abc7867456k02b6
+	 -->
+	
 </beans>

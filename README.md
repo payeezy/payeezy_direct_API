@@ -10,12 +10,6 @@ User Action: Buyer does a checkout on the merchant hosted site by clicking on bu
 
 NOTE: The merchant/third party is responsible for PCI compliance and may be required to provide First Data with additional documentation and/or their attestation of compliance
 
-# TokenBased Transactions (NEW) - 
-*	Generate Token with ta_token - auth false - POST API
-*	Generate Token with ta_token - auth true - POST API
-*	Generate Token without  ta_token & auth -  - POST API with 0$ Auth
-*	Generate Token - Backward compatible -  POST API call
-
 # Payeezy supported language
 Java, PHP, Python,Ryby, nodeJS and Curl. 
 
