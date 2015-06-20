@@ -2,6 +2,12 @@
 
 This code sample showcases integration of the Payeezy API in PHP. 
 
+# TokenBased Transactions (NEW) - 
+*	Generate Token with ta_token - auth false - POST API
+*	Generate Token with ta_token - auth true - POST API
+*	Generate Token without  ta_token & auth -  - POST API with 0$ Auth
+*	Generate Token - Backward compatible -  POST API call
+
 ## Pre-requisites
 
 In addition to having PHP installed (5.3 and above) , you will need the PHPUnit framework to execute the tests.

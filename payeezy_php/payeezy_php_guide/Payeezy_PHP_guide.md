@@ -2,6 +2,12 @@
 
 # Payeezy
 
+# TokenBased Transactions (NEW) - 
+*	Generate Token with ta_token - auth false - POST API
+*	Generate Token with ta_token - auth true - POST API
+*	Generate Token without  ta_token & auth -  - POST API with 0$ Auth
+*	Generate Token - Backward compatible -  POST API call
+
 This code sample showcases integration of the Payeezy API in PHP. 
 
 ## Pre-requisites
