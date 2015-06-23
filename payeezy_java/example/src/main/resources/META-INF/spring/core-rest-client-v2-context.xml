@@ -22,24 +22,15 @@
 
 
 	<!-- CERT -->
-<!-- 	<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
+ 	<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
 		<property name="url" value="https://api-cert.payeezy.com/v1" />
 		
 		 
 		<property name="appId" value="y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a" />
 		<property name="securedSecret" value="86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7" />
 		<property name="token" value="fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6" />
-	</bean> -->
+	</bean> 
 	
-	<!-- CAT -->
-		<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
-		<property name="url" value="https://api-cat.payeezy.com/v1" />
-		
-		 
-		<property name="appId" value="bA8hIqpzuAVW6itHqXsXwSl6JtFWPCA0" />
-		<property name="securedSecret" value="86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7" />
-		<property name="token" value="fdoa-a480ce8951daa73262734cf102641994abc7643456k02b6" />
-	</bean>
 	<!-- fdoa-a480ce8951daa73262734cf102641994abc7643456k02b6
 fdoa-a480ce8951daa82062734cf102641994c1e67123456k02b6
 fdoa-a480ce8951daa73262734cf102641994abc7867456k02b6
