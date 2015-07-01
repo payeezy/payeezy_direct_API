@@ -25,7 +25,11 @@ For more information on step by step prerequisites, refer to our Getting Started
 *	This batch file calls primary and secondary transactions for Credit Card, eCheck or TeleCheck and GiftCard or ValueLink
 *	The secondary transactions (url with {transaction_id}) parameter needs transaction_id and transaction_tag values from primary transaction.
 
-
+# TokenBased Transactions (NEW) - 
+*	Generate Token with ta_token - auth false - GET API
+*	Generate Token with ta_token - auth true - GET API
+*	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
+*	Generate Token - Backward compatible -  GET API call
 
 # Getting Started with Payeezy
 Using below listed steps, you can easily integrate your mobile/web payment application with Payeezy APIs and go LIVE!
