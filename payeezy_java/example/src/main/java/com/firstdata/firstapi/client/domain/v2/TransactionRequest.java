@@ -9,6 +9,7 @@ import org.codehaus.jackson.annotate.JsonAutoDetect.Visibility;
 
 
 @JsonAutoDetect(fieldVisibility = Visibility.ANY, getterVisibility = Visibility.NONE, setterVisibility = Visibility.NONE)
+
 public class TransactionRequest {
 	public TransactionRequest() {
 	}
@@ -46,6 +47,53 @@ public class TransactionRequest {
 	@JsonProperty("valuelink")
     private ValueLink valuelink;
 	
+	//@JsonProperty("callback")
+	private String callback;
+	
+	//@JsonProperty("authorization")
+	private String auth;
+	
+	@JsonProperty("type")
+	private String Type;
+	
+	public String getType() {
+		return Type;
+	}
+	public void setType(String type) {
+		Type = type;
+	}
+
+	@JsonProperty("ta_token")
+	private String ta_token;
+	
+	public String getTa_token() {
+		return ta_token;
+	}
+	public void setTa_token(String ta_token) {
+		this.ta_token = ta_token;
+	}
+	public String getAuth() {
+		return auth;
+	}
+	public void setAuth(String auth) {
+		this.auth = auth;
+	}
+
+	//@JsonProperty("token")
+	private Token token;
+	
+	public Token getToken() {
+		return token;
+	}
+	public void setToken(Token token) {
+		this.token = token;
+	}
+	public String getCallback() {
+		return callback;
+	}
+	public void setCallback(String callback) {
+		this.callback = callback;
+	}
 	public String getTransactionType() {
         return transactionType;
     }

@@ -33,6 +33,7 @@ public class SystemSSLDefaultHttpClient  {
 
         this.httpClient = new DefaultHttpClient(connectionManager);
 //        setReadTimeout(DEFAULT_READ_TIMEOUT_MILLISECONDS);
+        
 
     }
 

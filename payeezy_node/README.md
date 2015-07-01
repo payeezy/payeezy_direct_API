@@ -2,6 +2,12 @@
 
 Payeezy nodeJS bindings
 
+# TokenBased Transactions (NEW) - 
+*	Generate Token with ta_token - auth false - GET API
+*	Generate Token with ta_token - auth true - GET API
+*	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
+*	Generate Token - Backward compatible -  GET API call
+
 ## Contributing
 
 1. Fork it 

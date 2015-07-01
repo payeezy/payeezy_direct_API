@@ -4,9 +4,10 @@ describe "Sample calls to Payeezy" do
 
   before :each do
     options = {}
-    options[:url]       = 'https://api-cert.payeezy.com/v1/transactions'
-    options[:apikey]    = 'y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a'
-    options[:apisecret] = '86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7'
+    options[:url]       = 'https://api-cat.payeezy.com/v1/transactions'
+    options[:tokenURL]  = 'https://api-cat.payeezy.com/v1/transactions/tokens'
+    options[:apikey]    = 'Jc9qkh5wkkPxv1K3o807N9wz0qfcHGQE'
+    options[:apisecret] = '698189fe9a74ce3627835e594586c8b77e7d1a9aaa129ace9e4123bc13a15747'
     options[:token]     = 'fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6'
 
     @payeezy = Payeezy::Transactions.new options
@@ -18,6 +19,14 @@ describe "Sample calls to Payeezy" do
     end
   end
 
+  describe "Execute Token Based Transactions" do
+    it 'Tokenize Transaction' do
+      @primary_response = @payeezy.transactGetToken(:getToken,tokenize_tx_payload)
+      @token_response = @primary_response['token']
+      printf "token Value is = %s\n", @token_response['value']
+    end
+  end
+  
   describe "Execute Primary Transactions" do
     it 'Authorize Transaction' do
       @primary_response = @payeezy.transact(:authorize,primary_tx_payload)
@@ -63,8 +72,6 @@ describe "Sample calls to Payeezy" do
       @secondary_response = @payeezy.transact(:split,secondary_tx_payload_split(@primary_response,"02/02",@split_amount))
       @secondary_response['transaction_status'].should == "approved"
     end
-
-
   end
 
   describe "Execute TeleCheck_Primary Transactions" do
@@ -120,6 +127,24 @@ describe "Sample calls to Payeezy" do
       @secondary_response = @payeezy.transact(:refund,secondary_valuelink_tx_payload(@primary_response))
       @secondary_response['transaction_status'].should == "approved"
     end
+  end
+  
+  def tokenize_tx_payload
+    credit_card = {}
+    payload = {}
+    payload[:type] = 'FDToken'
+    payload[:auth]='false'
+    payload[:ta_token]='NOIW'
+   
+
+    credit_card[:type] = 'visa'
+    credit_card[:cardholder_name] = 'John Smith'
+    credit_card[:card_number] = '4788250000028291'
+    credit_card[:exp_date] = '1030'
+    credit_card[:cvv] = '123'
+    payload[:credit_card] = credit_card
+
+    payload
   end
 
   def primary_tx_payload

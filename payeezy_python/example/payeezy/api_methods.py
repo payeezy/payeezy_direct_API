@@ -246,3 +246,36 @@ class Payeezy(object):
 			payload = { "merchant_ref": description, "transaction_tag" : transactionTag, "transaction_type": transactionType, "method": "credit_card", "amount": amount, "currency_code": currency_code.upper() }
 
 		return {'payload':payload,'transactionID':transactionID}
+
+    # Get FD token 
+    # Values for "type": "FDToken"  , "auth": "false" and "ta_token": "NOIW"
+    # For Authorize or Purchase, Just replace card number by FDtoken 
+
+	def getFDTokenPayload(self,  FDtype = None, auth = None, ta_token = None, cardholder_name= None, card_number=None, card_expiry=None, card_cvv=None):
+
+		if (transactionType == ('authorize' or 'purchase')): 
+
+			if card_number is None:
+				raise ValueError, 'card number cannot be nil'
+
+			if type(card_number) is int:
+				card_number = str(card_number)
+
+			if cardholder_name is None:
+				cardholder_name = 'Not Provided'
+
+			if card_cvv is None:
+				raise ValueError, 'cvv number cannot be nil'
+
+			if type(card_cvv) is int:
+				card_cvv = str(card_cvv)
+
+			if card_expiry is None:
+				raise ValueError, 'card expiration cannot be nil. It has to be in MMYY format'
+
+			if type(card_expiry) is int:
+				card_expiry = str(card_expiry)
+
+			payload = { "type": "FDToken", "auth": "false", "ta_token": "NOIW" , "credit_card": { "type": card_type, "cardholder_name": cardholder_name, "card_number": card_number, "exp_date": card_expiry, "cvv": card_cvv } }
+
+		return {'payload':payload,'transactionID':transactionID}

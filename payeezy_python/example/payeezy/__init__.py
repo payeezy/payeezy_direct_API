@@ -2,6 +2,7 @@ apikey = ""
 apisecret = ""
 token = ""
 baseURL = ""
+tokenURL = "" # optional parameter for oken based transaction 
 
 
 # Resource
@@ -18,6 +19,7 @@ _ALLOWED_ATTRIBUTES = (
     'apikey',
 	'apisecret',
 	'token',
-	'baseURL'
+	'baseURL',
+	'tokenURL' # optional parameter for oken based transaction 
 )
 _original_module = _sys.modules[__name__]

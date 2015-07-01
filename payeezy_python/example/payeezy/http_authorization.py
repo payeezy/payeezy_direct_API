@@ -56,11 +56,13 @@ class MyAdapter(HTTPAdapter):
 class PayeezyHTTPAuthorize(object):
 
 	# init function
-	def __init__(self, apiKey,apiSecret, token, url):
+	# tokenURL is optional and required if you process token based transaction 
+	def __init__(self, apiKey,apiSecret, token, url,tokenURL):
 		self.apikey = apiKey
 		self.apisecret = apiSecret
 		self.token = token
 		self.url = url
+		self.tokenURL = tokenURL
 		self.timeout = 30 # max timeout is 30 sec
 
 	# HMAC Generation
@@ -72,7 +74,15 @@ class PayeezyHTTPAuthorize(object):
 		hmacInHex = hmac.new(self.apisecret, msg=messageData, digestmod=hashlib.sha256).hexdigest()
 		return b64encode(hmacInHex)
 
-			
+	# method to make calls for getToken 
+	def getTokenPostCall(self, payload):
+		response = requests.Session()
+		response.mount('https://', MyAdapter())
+		self.payload = json.dumps(payload)
+		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
+		result = response.post(self.tokenURL, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':'xxxxx'}, data=self.payload)
+		return result
+
 	#Generic method to make calls for primary transactions
 	def makeCardBasedTransactionPostCall(self, payload):
 		response = requests.Session()

@@ -19,10 +19,11 @@ class PayeezyCheckLink extends PHPUnit_Framework_TestCase
 
     self::$payeezy = new Payeezy();
 
-    self::$payeezy->setApiKey("y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a");
-    self::$payeezy->setApiSecret("86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7");
+    self::$payeezy->setApiKey("Jc9qkh5wkkPxv1K3o807N9wz0qfcHGQE");
+    self::$payeezy->setApiSecret("698189fe9a74ce3627835e594586c8b77e7d1a9aaa129ace9e4123bc13a15747");
     self::$payeezy->setMerchantToken("fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6");
-    self::$payeezy->setUrl("https://api-cert.payeezy.com/v1/transactions");
+    self::$payeezy->setTokenUrl("https://api-cat.payeezy.com/v1/transactions/tokens"); # this is for get token 
+    self::$payeezy->setUrl("https://api-cat.payeezy.com/v1/transactions");
   }
 
   public function processInput($data) {
@@ -31,6 +32,8 @@ class PayeezyCheckLink extends PHPUnit_Framework_TestCase
     $data = htmlspecialchars($data);
     return strval($data);
   }
+
+
 
   public function setTeleCheckPrimaryTxPayload()
   {
@@ -97,6 +100,38 @@ class PayeezyCheckLink extends PHPUnit_Framework_TestCase
     );
 
     return $primaryTxPayload;
+
+  }
+
+   public function setTokenPayload(){
+
+        $card_holder_name = $transaction_type = $auth = $card_number = $ta_token = $card_type = $card_cvv = $card_expiry = $currency_code = $merchant_ref="";
+        
+        $transaction_type = $this->processInput("FDToken");
+        $auth = $this->processInput("false");
+        $ta_token => processInput("NOIW");
+
+        $card_holder_name = $this->processInput("John Smith");
+        $card_number = $this->processInput("4788250000028291");
+        $card_type = $this->processInput("visa");
+        $card_cvv = $this->processInput("123");
+        $card_expiry = $this->processInput("1250");
+        $currency_code = $this->processInput("USD");
+        $merchant_ref = $this->processInput("Astonishing-Sale");
+
+        $getTokenPayload = array(
+
+            "type"=> $transaction_type,
+            "auth" => $auth,
+            "ta_token" => $ta_token,
+            "card_type" => $card_type,
+            "card_holder_name" => $card_holder_name,,
+            "card_number" => $card_number,
+            "card_exp_date" => $card_expiry,
+            "card_cvv" => $card_cvv,
+        );
+
+        return $getTokenPayload;
 
   }
 
@@ -215,6 +250,16 @@ class PayeezyCheckLink extends PHPUnit_Framework_TestCase
 
     return $secondaryTxPayload;
 
+  }
+
+/**
+   * [testTeleCheckPurchase description]
+   * 
+   */
+  public function testGetToken()
+  {
+    $primaryTxResponse_JSON = json_decode(self::$payeezy->getToken($this->setTeleCheckPrimaryTxPayload()));
+    $this->assertEquals($primaryTxResponse_JSON->transaction_status,"approved");
   }
 
   /**

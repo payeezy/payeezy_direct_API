@@ -10,13 +10,20 @@ module Payeezy
   class Transactions
     def initialize(options = {})
       @url = options[:url]
+      @tokenURL = options[:tokenURL]
       @apikey = options[:apikey]
       @apisecret = options[:apisecret]
       @token = options[:token]
     end
 
     def transact(action, payload)
-      commit(action, payload)
+      url = @url
+      commit(url, action, payload)
+    end
+    
+    def transactGetToken(action, payload)
+      url = @tokenURL
+      commitGetToken(url, action, payload)
     end
 
     def generate_hmac(nonce, current_timestamp, payload)
@@ -42,13 +49,23 @@ module Payeezy
       }
     end
 
-    def commit(action, params)
-      url = @url
+    def commit(url, action, params)
+      
       if action == :capture || action == :void || action == :refund || action == :split
         url = url + '/' + params[:transaction_id]
         params.delete(:transaction_id)
       end
       params[:transaction_type] = action
+      printf "url =%s \n", url 
+      printf "url =%s \n", params
+      
+      call_rest(url, post_data(params), headers(post_data(params)))
+    end
+    
+    def commitGetToken(url, action, params)
+     
+      printf "url =%s \n", url 
+      printf "url =%s \n", params
       call_rest(url, post_data(params), headers(post_data(params)))
     end
 

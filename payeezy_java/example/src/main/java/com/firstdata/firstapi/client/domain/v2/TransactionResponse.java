@@ -15,6 +15,23 @@ public class TransactionResponse {
      * "transaction_id":"OK3740","transaction_tag":"1597368","transarmor_token":"2537446225198291",
      * "correlation_id":"55.1410534812572"} 
      * */
+	
+	/*
+	 * {
+		    correlation_id=227.1431376843540,
+		    status=success,
+		    type=FDToken,
+		    token={
+		        type=mastercard,
+		        cardholder_name=JohnSmith,
+		        exp_date=0416,
+		        value=2833693264441732
+		    }
+		}
+	 * 
+	 * */
+	 
+	 
 	public TransactionResponse() {
 	}
 	
@@ -58,6 +75,38 @@ public class TransactionResponse {
 	@JsonProperty("gateway_message")
     private String gatewayMessage;
 
+	
+	//additional properties
+	
+	
+	public String getStatus() {
+		return status;
+	}
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+	public String getType() {
+		return type;
+	}
+
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	@JsonProperty("status")
+    private String status;
+
+	@JsonProperty("type")
+    private String type;
+
+	
+	//end - additional properties
+	
 	
 	@JsonProperty("tele_check")
     private Telecheck teleCheck;

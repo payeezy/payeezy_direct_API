@@ -5,8 +5,8 @@ baseURL = ""
 
 
 # Resource
-import payeezy.http_authorization
-from payeezy.api_methods import Payeezy
+import http_authorization
+from api_methods import Payeezy
 
 transactions = Payeezy()
 

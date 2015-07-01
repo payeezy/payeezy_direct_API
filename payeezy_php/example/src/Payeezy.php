@@ -9,6 +9,7 @@ class Payeezy
   public static $apiSecret;
   public static $merchantToken;
   public static $baseURL;
+  public static $tokenURL;
   public static $url;
 
   /**
@@ -66,6 +67,24 @@ class Payeezy
     return self::$baseURL;
   }
   /**
+   * Sets the API Base URL.
+   *
+   * @param string $url
+   */
+  public static function setTokenUrl($tokenURL)
+  {
+    self::$tokenURL = $tokenURL;
+  }
+  /**
+   * Gets the API Base token URL.
+   *
+   * @param string $url
+   */
+  public static function getTokenUrl()
+  {
+    return self::$tokenURL;
+  }
+  /**
    * Sets the API Merchant Token
    *
    * @param string $merchantToken
@@ -82,6 +101,45 @@ class Payeezy
   public static function getMerchantToken()
   {
     return self::$merchantToken;
+  }
+
+  /**
+   * Payeezy
+   *
+   * Generate Payload
+   */
+
+  public function getTokenPayload($args = array())
+  {
+    $args = array_merge(array(
+        "type"=> "",
+        "auth" => "",
+        "ta_token" => "",
+        "card_type" => "",
+        "card_holder_name" => "",
+        "card_number" => "",
+        "card_exp_date" => "",
+        "card_cvv" => ""
+
+    ), $args);
+
+    $transaction_type = strtolower(func_get_arg(1));
+
+    $data = "";
+    $data = array(
+              'type'=> 'FDToken',
+              'auth'=> 'false',
+              'ta_token'=> 'NOIW',
+              'credit_card'=> array(
+                      'type'=> $args['card_type'],
+                      'cardholder_name'=> $args['card_holder_name'],
+                      'card_number'=> $args['card_number'],
+                      'exp_date'=> $args['card_exp_date'],
+                      'cvv'=> $args['card_cvv'],
+                    )
+     self::$url = self::$tokenURL;
+    
+    return json_encode($data, JSON_FORCE_OBJECT);
   }
 
   /**
@@ -108,7 +166,6 @@ class Payeezy
     ), $args);
 
     $transaction_type = strtolower(func_get_arg(1));
-
 
 
     $data = "";
@@ -162,6 +219,7 @@ class Payeezy
     }
     return json_encode($data, JSON_FORCE_OBJECT);
   }
+
 
   /**
    * Payeezy

@@ -30,6 +30,12 @@
     	<version>1.8.8</version>
     </dependency>
     <dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-annotations</artifactId>
+		<version>2.2.3</version>
+	</dependency>
+
+    <dependency>
 		<groupId>org.apache.httpcomponents</groupId>
 		<artifactId>httpclient</artifactId>
 		<version>4.3.2</version>

@@ -1,7 +1,7 @@
 # Payeezy Client/API Sample code for Java Programming language 
+Sample code for Java Programming language 
 
 Maven dependencies 
-```xml
 <dependencies>
 	<dependency>
 		<groupId>org.springframework</groupId>
@@ -45,7 +45,7 @@ Maven dependencies
   		<scope>test</scope>
      </dependency>
  </dependencies>
-```
+  
 
 ## Contributing
 
