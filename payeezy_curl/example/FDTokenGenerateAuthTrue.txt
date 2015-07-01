@@ -1,0 +1,12 @@
+{
+	"type": "FDToken",
+	"credit_card": {
+		"type": "VISA",
+		"cardholder_name": "JohnSmith",
+		"card_number": "4788250000028291",
+		"exp_date": "1030",
+		"cvv": "123"
+	},
+	"auth": "true",
+	"ta_token": "NOIW"
+}

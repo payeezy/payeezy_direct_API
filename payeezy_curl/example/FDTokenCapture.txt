@@ -1,0 +1,17 @@
+{
+  "merchant_ref": "Astonishing-Sale",
+  "transaction_tag": "1872774",
+  "transaction_type": "capture",
+  "method": "token",
+  "amount": "200",
+  "currency_code": "USD",
+  "token": {
+    "token_type": "FDToken",
+    "token_data": {
+      "type": "visa",
+      "value": "2537446225198291",
+      "cardholder_name": "JohnSmith",
+      "exp_date": "1030"
+    }
+  }
+}

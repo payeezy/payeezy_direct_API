@@ -1,0 +1,12 @@
+{
+	"type": "FDToken",
+	"credit_card": {
+		"type": "Mastercard",
+		"cardholder_name": "JohnSmith",
+		"card_number": "5424180279791732",
+		"exp_date": "1030",
+		"cvv": "123"
+	},
+	"auth": "false",
+	"ta_token": "NOIW"
+}
