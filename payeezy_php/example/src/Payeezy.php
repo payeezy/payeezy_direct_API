@@ -137,6 +137,7 @@ class Payeezy
                       'exp_date'=> $args['card_exp_date'],
                       'cvv'=> $args['card_cvv'],
                     )
+               );
      self::$url = self::$tokenURL;
     
     return json_encode($data, JSON_FORCE_OBJECT);
