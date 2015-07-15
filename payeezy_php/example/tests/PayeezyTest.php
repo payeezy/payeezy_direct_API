@@ -31,7 +31,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
         
         $transaction_type = $this->processInput("FDToken");
         $auth = $this->processInput("false");
-        $ta_token => processInput("NOIW");
+        $ta_token = $this->processInput("NOIW");
 
         $card_holder_name = $this->processInput("John Smith");
         $card_number = $this->processInput("4788250000028291");
@@ -47,7 +47,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
             "auth" => $auth,
             "ta_token" => $ta_token,
             "card_type" => $card_type,
-            "card_holder_name" => $card_holder_name,,
+            "card_holder_name" => $card_holder_name,
             "card_number" => $card_number,
             "card_exp_date" => $card_expiry,
             "card_cvv" => $card_cvv,
