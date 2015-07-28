@@ -10,12 +10,11 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
     public static function setUpBeforeClass(){
 
         self::$payeezy = new Payeezy();
-
-        self::$payeezy->setApiKey("Jc9qkh5wkkPxv1K3o807N9wz0qfcHGQE");
-        self::$payeezy->setApiSecret("698189fe9a74ce3627835e594586c8b77e7d1a9aaa129ace9e4123bc13a15747");
-        self::$payeezy->setMerchantToken("fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6");
-        self::$payeezy->setTokenUrl("https://api-cat.payeezy.com/v1/transactions/tokens"); # this is for get token 
-        self::$payeezy->setUrl("https://api-cat.payeezy.com/v1/transactions");
+	self::$payeezy->setApiKey("y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a");
+    	self::$payeezy->setApiSecret("86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7");
+    	self::$payeezy->setMerchantToken("fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6");
+    	self::$payeezy->setTokenUrl("https://api-cert.payeezy.com/v1/transactions/tokens");  
+    	self::$payeezy->setUrl("https://api-cert.payeezy.com/v1/transactions");
     }
 
     public function processInput($data) {
