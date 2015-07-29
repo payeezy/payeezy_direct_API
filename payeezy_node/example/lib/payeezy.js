@@ -18,7 +18,7 @@ var resources = {
 
 payeezy.resources = resources;
 
-payeezy.prototype.host = 'api.payeezy.com';
+payeezy.prototype.host = 'api-cert.payeezy.com';
 payeezy.prototype.version = "v1";
 
 payeezy.prototype = {
