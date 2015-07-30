@@ -44,7 +44,7 @@ Resource.prototype = {
 				'Authorization': util.getAuthorizationHeader(this.payeezy.getApiKey(), this.payeezy.getApiSecret(), requestJSON, this.payeezy.getToken(), nonce, timeInMillis)
 			};
 			if (typeof this.payeezy.host == 'undefined') {
-				this.payeezy.host = 'api.payeezy.com';
+				this.payeezy.host = 'api-cert.payeezy.com';
 			}
 			if (typeof this.payeezy.version == 'undefined') {
 				this.payeezy.version = 'v1';
