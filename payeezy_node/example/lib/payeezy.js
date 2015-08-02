@@ -12,7 +12,8 @@ function payeezy(apiKey, apiSecret, token) {
 
 var resources = {
 
-  transaction: require('./resources/transaction')
+  transaction: require('./resources/transaction'),
+  tokens: require('./resources/getToken')
 
 };
 

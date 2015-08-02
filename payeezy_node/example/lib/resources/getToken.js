@@ -6,7 +6,7 @@ module.exports = Resource.extend({
 		
 		path : '/transactions/tokens',
 		
-		purchase : method ({
+		getToken : method ({
 			tranType : 'FDToken',
 			method: 'POST'
 		})
