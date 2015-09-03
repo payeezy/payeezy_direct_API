@@ -26,8 +26,8 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
 
     public function setTokenPayload(){
 
-        $card_holder_name = $transaction_type = $auth = $card_number = $ta_token = $card_type = $card_cvv = $card_expiry = $currency_code = $merchant_ref="";
-        
+        $card_holder_name = $amount = $transaction_type = $auth = $card_number = $ta_token = $card_type = $card_cvv = $card_expiry = $currency_code = $merchant_ref="";
+    
         $transaction_type = $this->processInput("FDToken");
         $auth = $this->processInput("false");
         $ta_token = $this->processInput("NOIW");
@@ -38,6 +38,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
         $card_cvv = $this->processInput("123");
         $card_expiry = $this->processInput("1250");
         $currency_code = $this->processInput("USD");
+        $amount = processInput("1000");
         $merchant_ref = $this->processInput("Astonishing-Sale");
 
         $getTokenPayload = array(
@@ -48,12 +49,13 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
             "card_type" => $card_type,
             "card_holder_name" => $card_holder_name,
             "card_number" => $card_number,
-            "card_exp_date" => $card_expiry,
+            "card_expiry" => $card_expiry,
             "card_cvv" => $card_cvv,
+            "amount"=> $amount,
+            "currency_code"=> $currency_code,
         );
 
         return $getTokenPayload;
-
     }
 
     public function setPrimaryTxPayload(){
