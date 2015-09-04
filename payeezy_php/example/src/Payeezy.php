@@ -123,13 +123,13 @@ class Payeezy
 
     ), $args);
 
-    $transaction_type = strtolower(func_get_arg(1));
+    
 
     $data = "";
     $data = array(
-              'type'=> 'FDToken',
-              'auth'=> 'false',
-              'ta_token'=> 'NOIW',
+              'type'=> $args['type'],
+              'auth'=> $args['auth'],
+              'ta_token'=> $args['ta_token'],
               'credit_card'=> array(
                       'type'=> $args['card_type'],
                       'cardholder_name'=> $args['card_holder_name'],
@@ -152,18 +152,17 @@ class Payeezy
   public function getPayload($args = array())
   {
     $args = array_merge(array(
-      "amount"=> "",
-      "card_number" => "",
-      "card_type" => "",
-      "card_holder_name" => "",
-      "card_cvv" => "",
-      "card_expiry" => "",
-      "merchant_ref" => "",
-      "currency_code" => "",
-      "transaction_tag" => "",
-      "split_shipment" => "",
-      "transaction_id" => "",
-      "method" => ""
+        "amount"=> "",
+        "card_number" => "",
+        "card_type" => "",
+        "card_holder_name" => "",
+        "card_cvv" => "",
+        "card_expiry" => "",
+        "merchant_ref" => "",
+        "currency_code" => "",
+        "transaction_tag" => "",
+        "split_shipment" => "",
+        "transaction_id" => "",
 
     ), $args);
 
@@ -173,46 +172,20 @@ class Payeezy
     $data = "";
     if($transaction_type == "authorize" || $transaction_type == "purchase")
     {
-
-      if($args['method'] == 'token')
-      {
-
-        $token_data = array_merge(array(
-          'type' => '',
-          'cardholder_name' => '',
-          'exp_date' => '',
-          'value' => '',
-        ), $args['token']['token_data']);
-
-        $data = array(
-          'merchant_ref'=> $args['merchant_ref'],
-          'transaction_type'=> $transaction_type,
-          'method'=> $args['method'],
-          'amount'=> $args['amount'],
-          'currency_code'=> strtoupper($args['currency_code']),
-          'token'=> array(
-            'token_type'=> $args['token']['token_type'],
-            'token_data'=> $token_data,
-          )
-        );
-      }
-      else
-      {
-        $data = array(
-          'merchant_ref'=> $args['merchant_ref'],
-          'transaction_type'=> $transaction_type,
-          'method'=> $args['method'],
-          'amount'=> $args['amount'],
-          'currency_code'=> strtoupper($args['currency_code']),
-          'credit_card'=> array(
-            'type'=> $args['card_type'],
-            'cardholder_name'=> $args['card_holder_name'],
-            'card_number'=> $args['card_number'],
-            'exp_date'=> $args['card_expiry'],
-            'cvv'=> $args['card_cvv'],
-          )
-        );
-      }
+      $data = array(
+              'merchant_ref'=> $args['merchant_ref'],
+              'transaction_type'=> $transaction_type,
+              'method'=> 'credit_card',
+              'amount'=> $args['amount'],
+              'currency_code'=> strtoupper($args['currency_code']),
+              'credit_card'=> array(
+                      'type'=> $args['card_type'],
+                      'cardholder_name'=> $args['card_holder_name'],
+                      'card_number'=> $args['card_number'],
+                      'exp_date'=> $args['card_expiry'],
+                      'cvv'=> $args['card_cvv'],
+                    )
+      );
 
       self::$url = self::$baseURL;
     }else{
@@ -235,12 +208,12 @@ class Payeezy
 
       }else{
         $data = array(
-          'merchant_ref'=> $args['merchant_ref'],
-          'transaction_type'=> $transaction_type,
-          'method'=> 'credit_card',
-          'amount'=> $args['amount'],
-          'currency_code'=> strtoupper($args['currency_code']),
-          'transaction_tag'=>$args['transaction_tag'],
+                'merchant_ref'=> $args['merchant_ref'],
+                'transaction_type'=> $transaction_type,
+                'method'=> 'credit_card',
+                'amount'=> $args['amount'],
+                'currency_code'=> strtoupper($args['currency_code']),
+                'transaction_tag'=>$args['transaction_tag'],
         );
 
       }
@@ -505,6 +478,22 @@ class Payeezy
     return $response;
   }
 
+/**
+   * Payeezy
+   *
+   * token Transaction
+   */
+
+  public function token($args = array())
+  {
+      $payload = $this->getTokenPayload($args);
+
+      $headerArray = $this->hmacAuthorizationToken($payload);
+
+      echo $payload;
+
+      return $this->postTransaction($payload, $headerArray);
+  }
   /**
    * Payeezy
    *
@@ -516,6 +505,8 @@ class Payeezy
       $payload = $this->getPayload($args, "authorize");
 
       $headerArray = $this->hmacAuthorizationToken($payload);
+
+      echo $payload;
 
       return $this->postTransaction($payload, $headerArray);
   }
@@ -529,7 +520,11 @@ class Payeezy
   public function purchase($args = array())
   {
       $payload = $this->getPayload($args, "purchase");
+      
       $headerArray = $this->hmacAuthorizationToken($payload);
+
+      echo $payload;
+
       return $this->postTransaction($payload, $headerArray);
   }
 
@@ -543,6 +538,7 @@ class Payeezy
   {
       $payload = $this->getPayload($args, "capture");
       $headerArray = $this->hmacAuthorizationToken($payload);
+      echo $payload;
       return $this->postTransaction($payload, $headerArray);
   }
 
@@ -556,6 +552,7 @@ class Payeezy
   {
       $payload = $this->getPayload($args, "void");
       $headerArray = $this->hmacAuthorizationToken($payload);
+      echo $payload;
       return $this->postTransaction($payload, $headerArray);
   }
 
@@ -569,6 +566,7 @@ class Payeezy
   {
       $payload = $this->getPayload($args, "refund");
       $headerArray = $this->hmacAuthorizationToken($payload);
+      echo $payload;
       return $this->postTransaction($payload, $headerArray);
   }
 
