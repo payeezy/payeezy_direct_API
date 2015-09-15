@@ -24,7 +24,7 @@ class Payeezy(object):
 											  description=description, 
 											  transactionType='authorize')
 
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+		return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 	def purchase(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
 		
@@ -38,7 +38,7 @@ class Payeezy(object):
 											  description=description,
 											  transactionType='purchase')
 
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+		return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 
 
@@ -64,41 +64,46 @@ class Payeezy(object):
 		return self.makeSecondaryTransaction(self.transactionType, self.payload);
 	########### TeleCheck Methods #######################
 	
-	def teleCheckPurchaseVoid(self, amount=None, transaction_type=None, currency_code=None, check_number=None, check_type=None, routing_number=None, account_number=None, accountholder_name=None, customer_id_type=None, customer_id_number=None, client_email=None, street=None,	city=None, state_province=None, zip_postal_code=None, country=None):
+	def teleCheckPurchaseVoid(self,transaction_type=None,amount=None,currency_code=None, check_number=None,check_type=None,routing_number=None,account_number=None,accountholder_name=None,customer_id_type=None,customer_id_number=None,client_email=None,gift_card_amount=None,vip,clerk_id=None,device_id=None,release_type=None,registration_number=None,registration_date=None,date_of_birth=None ,street,city=None,state_province=None,zip_postal_code=None,country=None):
 		
-		makePayload_output = self.makePayload(method=tele_check,
-											  transaction_type=transaction_type,
-											  amount=amount,
-											  currency_code=currency_code,
-											  tele_check:
-											  {   
-												check_number=check_number,
-												check_type=check_type,
-												routing_number=routing_number,
-												account_number=account_number,
-												accountholder_name=accountholder_name,
-												customer_id_type=customer_id_type,
-												customer_id_number=customer_id_number,
-												client_email=client_email,
-												gift_card_amount=gift_card_amount,
-												vip=vip,
-												clerk_id=clerk_id,
-												device_id=device_id,
-												release_type=release_type,
-												registration_number=registration_number,
-												registration_date=registration_date,
-												date_of_birth=date_of_birth
-											   },
-											   billing_address:
-											   {   
-												street=street,
-												city=city,
-												state_province=state_province,
-												zip_postal_code=zip_postal_code,
-												country=country
-											    })
+		makePayload_output = self.makePayload({  
+                                    "method":"tele_check",
+                                    "transaction_type":transaction_type,
+                                    "amount":amount,
+                                    "currency_code":currency_code,
+                                    "merchant_ref":merchant_ref,
+                                    "tele_check":{  
+                                        "check_number":check_number,
+                                        "check_type":check_type,
+                                        "account_number":account_number,
+                                        "routing_number":routing_number,
+                                        "accountholder_name":accountholder_name,
+                                        "customer_id_type":customer_id_type,
+                                        "customer_id_number":customer_id_number,
+                                        "client_email":client_email,
+                                        "gift_card_amount":gift_card_amount,
+                                        "vip":vip,
+                                        "clerk_id":clerk_id,
+                                        "device_id":device_id,
+                                        "release_type":release_type,
+                                        "registration_number":registration_number,
+                                        "registration_date":registration_date,
+                                        "date_of_birth":date_of_birth
+                                    },
+                                    "billing_address":{  
+                                        "street":street,
+                                        "city":city,
+                                        "state_province":state_province,
+                                        "zip_postal_code":zip_postal_code,
+                                        "country":country
+                                    }
+                                })
 
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+
+										
+
+
+		return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 	def teleCheckTaggedVoid(self,  payload):
 		self.payload = payload
@@ -110,22 +115,23 @@ class Payeezy(object):
 		self.transactionType = "refund"
 		return self.makeSecondaryTransaction(self.transactionType, self.payload);
 	
-	########### ValueLink Methods #######################
+	########### ValueLink Methods - start #######################
 	
 	def valueLinkPurchaseReloadPartialPurchase(self, amount=None, transaction_type=None, currency_code=None, cardholder_name=None, cc_number=None, ):
 		
-		makePayload_output = self.makePayload(method=value_link,
-											  transaction_type=transaction_type,
-											  amount=amount,
-											  currency_code=currency_code,
-											  valuelink:
-											  {   
-												cardholder_name=cardholder_name,
-												cc_number=cc_number,
-												credit_card_type='Gift'
-											  })
-
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+       makePayload_output = self.makePayload( { "amount":amount,
+                                                "transaction_type":transaction_type,
+                                                "method":"valuelink",
+                                                "currency_code":currency_code,
+                                                "valuelink":{  
+                                                    "cardholder_name":cardholder_name,
+                                                    "cc_number":cc_number,
+                                                    "credit_card_type":"Gift"
+                                                }
+                                            })
+		
+        
+      	return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 	def valueLinkActivation(self, amount=None, currency_code=None, cardholder_name=None, cc_number=None, card_cost=None ):
 		
@@ -141,7 +147,7 @@ class Payeezy(object):
 												card_cost=card_cost
 											  })
 
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+		return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 	def valueLinkCashOutDeactivationBalanceInquiry(self, currency_code=None, transaction_type=None, cardholder_name=None, cc_number=None, card_cost=None ):
 		
@@ -154,7 +160,7 @@ class Payeezy(object):
 												credit_card_type='Gift'
 											  })
 
-		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+		return self.makePrimaryTransaction( payload=makePayload_output['payload']);
 
 	def valueLinkVoid(self,  payload):
 		self.payload = payload
@@ -175,6 +181,131 @@ class Payeezy(object):
 		self.payload = payload
 		self.transactionType = "refund"
 		return self.makeSecondaryTransaction(self.transactionType, self.payload);
+        
+    ########### ValueLink Methods - end #######################    
+    
+    ########### German Direct Debit Methods - start #######################
+    
+    def processPurchaseCreditTransactionWithAVSDirectDebit(self, method=None, transaction_type=None, amount=None, currency_code=None, 
+    iban=None, mandate_ref=None, bic=None, name=None, city=None, country=None, email=None, type=None, number=None, 
+    street=None, state_province=None, zip_postal_code=None)
+    
+    makePayload_output = self.makePayload(  method=debit_card,
+                                            transaction_type=transaction_type,
+                                            amount=amount,
+                                            currency_code='EUR',
+                                            "debit_card": 
+                                            {
+                                                iban=iban,
+                                                mandate_ref=mandate_ref,
+                                                bic=bic
+                                            },
+                                            "billing_address": {
+                                                name=name,
+                                                city=city,
+                                                country=country,
+                                                email=email,
+                                                phone: {
+                                                    type=type,
+                                                    number=number,
+                                                },
+                                                street=street,
+                                                state_province=state_province,
+                                                zip_postal_code=zip_postal_code
+                                            }
+                                         )
+
+     return self.makePrimaryTransaction( payload=makePayload_output['payload']);
+     
+     
+     def processPurchaseCreditTransactionWithSoftDescDirectDebit(self, method=None, transaction_type=None, amount=None, currency_code=None, iban=None, mandate_ref=None, bic=None, name=None, city=None, country=None, email=None, type=None, number=None, street=None, state_province=None, zip_postal_code=None)
+    
+     makePayload_output = self.makePayload( 
+                                             method='debit_card',
+                                             transaction_type='purchase',
+                                             amount=amount,
+                                             currency_code='EUR',
+                                             debit_card: {
+                                                 iban=iban,
+                                                 mandate_ref=mandate_ref,
+                                                 bic=bic
+                                             },
+                                             soft_descriptors:{
+                                                 dba_name=dba_name,
+                                                 street=street,
+                                                 region=region,
+                                                 mid=mid,
+                                                 mcc=mcc,
+                                                 postal_code=postal_code,
+                                                 country_code=country_code,
+                                                 merchant_contact_info=merchant_contact_info
+                                             }
+                                         )
+
+      return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+      
+      def processPurchaseCreditTransactionWithL2L3DirectDebit(self, method=None, transaction_type=None, amount=None, currency_code=None, 
+      iban=None, mandate_ref=None, bic=None, name=None, city=None, country=None, email=None, type=None, number=None, 
+      street=None, state_province=None, zip_postal_code=None)
+    
+      makePayload_output = self.makePayload(  
+                                            method='debit_card',
+                                            transaction_type='purchase',
+                                            amount=1000,
+                                            currency_code='EUR',
+                                            debit_card: {
+                                                iban=iban,
+                                                mandate_ref=mandate_ref,
+                                                bic=bic
+                                            },
+                                            level2:{
+                                                tax1_amount=tax1_amount,
+                                                tax1_number=tax1_number,
+                                                tax2_amount=tax2_amount,
+                                                tax2_number=tax2_number,
+                                                customer_ref=customer_ref
+                                            },
+                                            level3:{
+                                                alt_tax_amount=alt_tax_amount,
+                                                alt_tax_id=alt_tax_id,
+                                                discount_amount=discount_amount,
+                                                duty_amount=duty_amount,
+                                                freight_amount=freight_amount,
+                                                ship_from_zip=ship_from_zip,
+                                                ship_to_address:{
+                                                    city=city,
+                                                    state=state,
+                                                    zip=zip,
+                                                    country=country,
+                                                    email=email,
+                                                    name=name,
+                                                    phone=phone,
+                                                    address_1=address_1,
+                                                    customer_number=customer_number
+                                                },
+                                                line_items:[
+                                                    {
+                                                        description=description,
+                                                        quantity=quantity,
+                                                        commodity_code=commodity_code,
+                                                        discount_amount=discount_amount,
+                                                        discount_indicator=discount_indicator,
+                                                        gross_net_indicator=gross_net_indicator,
+                                                        line_item_total=line_item_total,
+                                                        product_code=product_code,
+                                                        tax_amount=tax_amount,
+                                                        tax_rate=tax_rate,
+                                                        tax_type=tax_type,
+                                                        unit_cost=unit_cost,
+                                                        unit_of_measure=unit_of_measure
+                                                    }
+                                                ]
+                                            })
+
+       return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+       
+     
+    ########### German Direct Debit Methods - start #######################   
 
 	def makePrimaryTransaction(self, payload):
 		self.payload = payload
