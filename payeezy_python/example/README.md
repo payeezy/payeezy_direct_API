@@ -1,7 +1,12 @@
 # Payeezy python bindings
 
+# German Direct Debit Transactions (NEW) - 
+*	Purchase Void - POST API
+*	Purchase Refund - POST API
+*	Credit API
+
 <<<<<<< HEAD
-This is version payeezy 1.0 with which you could use transactions into your project using following steps
+This is version payeezy 2.0 with which you could use transactions into your project using following steps
 
  Download and install Requests 2.3 from the link below which is a dependancy for Payeezy.
  https://github.com/kennethreitz/requests

@@ -8,7 +8,7 @@ curl -X POST -H "Content-Type:application/json" -H "apikey:y6pWAJNyJyjGv66IsVuWn
         "type": "visa",
         "cardholder_name": "John Smith",
         "card_number": "4788250000028291",
-        "exp_date": "1014",
+        "exp_date": "1030",
         "cvv": "123"
     }
 }' https://api-cert.payeezy.com/v1/transactions
@@ -24,7 +24,7 @@ curl -X POST -H "Content-Type:application/json" -H "apikey:y6pWAJNyJyjGv66IsVuWn
         "type": "visa",
         "cardholder_name": "John Smith",
         "card_number": "4788250000028291",
-        "exp_date": "1014",
+        "exp_date": "1030",
         "cvv": "123"
     }
 }' https://api-cert.payeezy.com/v1/transactions

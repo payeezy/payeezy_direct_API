@@ -4,16 +4,6 @@ import org.codehaus.jackson.annotate.JsonValue;
 
 
 public enum TransactionType  implements TransactionTypeConstants{
-
-/*	Capture("capture"),Purchase("purchase"),Refund("refund"),Void("void"),Authorize("authorize");
-	private String transaction;
-	private TransactionType(String transType) {
-		this.transaction=transType;
-	}
-	@JsonValue
-	public String getValue() {
-		return this.transaction;
-	}*/
    
         PURCHASE(){
              
@@ -23,7 +13,6 @@ public enum TransactionType  implements TransactionTypeConstants{
             }
         },
         AUTHORIZE(){
-//            @Override 
             @JsonValue
             public String getValue() {
                 return GGE4_PREAUTH;
@@ -31,14 +20,14 @@ public enum TransactionType  implements TransactionTypeConstants{
         }
         ,
         CAPTURE(){
-//            @Override 
+
             @JsonValue
             public String getValue() {
                 return GGE4_V12_PREAUTH_COMPLETE;
             }
         },
         REFUND(){
-//            @Override        
+      
             @JsonValue
             public String getValue() {
                 return GGE4_V12_REFUND;
@@ -81,7 +70,7 @@ public enum TransactionType  implements TransactionTypeConstants{
         },
                 
         VOID(){
-//            @Override 
+
             @JsonValue
             public String getValue() {
                 return GGE4_V12_VOID;

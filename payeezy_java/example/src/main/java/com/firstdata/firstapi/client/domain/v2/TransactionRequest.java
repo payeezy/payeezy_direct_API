@@ -22,16 +22,22 @@ public class TransactionRequest {
 	
 	@JsonProperty("merchant_ref")
 	private String referenceNo;
+	
 	@JsonProperty("method")
 	private String paymentMethod;
+	
 	@JsonProperty("amount")
 	private String amount;
+	
 	@JsonProperty("currency_code")
 	private String currency;
+	
 	@JsonProperty("transaction_tag")
 	private String transactionTag;
+	
 	@JsonProperty("credit_card")
 	private Card card;
+	
 	@JsonProperty("billing_address")
 	private Address billing;
 	

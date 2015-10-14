@@ -1,0 +1,17 @@
+{
+ "amount":"100",
+ "transaction_type":"Purchase",
+ "method":"credit_card",
+ "currency_code":"GBP",
+ "credit_card":{
+ "type":"mastercard",
+ "cardholder_name":"Eck Test 3",
+"card_number":"4389800000000006",
+ "exp_date":"1215",
+"cvv":"006"
+ },
+ "rate_reference":{
+ "rate_id":"136752",
+ "dcc_accepted":"true"
+ }
+}

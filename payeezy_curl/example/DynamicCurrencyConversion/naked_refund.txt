@@ -1,0 +1,27 @@
+{
+ "amount":"100",
+ "transaction_type":"refund",
+ "method":"credit_card",
+ "currency_code":"GBP",
+ "credit_card":{
+ "type":"mastercard",
+ "cardholder_name":"Eck Test 3", "card_number":"4389800000000006",
+ "exp_date":"1215"
+ },
+ "billing_address":{
+ "city":"St. Louis",
+ "country":"US",
+ "email":"abc@main.com",
+ "phone":{
+ "type":"home",
+ "number":"212-515-1212"
+ },
+ "street":"12115 LACKLAND",
+ "state_province":"MO",
+ "zip_postal_code":"63146"
+ },
+ "rate_reference":{
+ "rate_id":"1442315938",
+ "dcc_accepted":"true"
+ }
+}

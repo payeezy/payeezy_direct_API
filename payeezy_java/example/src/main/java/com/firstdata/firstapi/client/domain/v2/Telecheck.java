@@ -30,9 +30,6 @@ public class Telecheck {
     @JsonProperty("client_email")
     private String clientEmail;
     
-    
-   
-    
     @JsonProperty("release_type")
     private String releaseType;
     

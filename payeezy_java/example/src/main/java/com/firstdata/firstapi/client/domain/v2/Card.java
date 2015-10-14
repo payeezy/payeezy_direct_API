@@ -21,8 +21,6 @@ public class Card implements Cloneable  {
     @JsonProperty("cvv")
 	private String cvv;
 	
-	
-	
 	public String getType() {
 		return type;
 	}

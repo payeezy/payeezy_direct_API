@@ -1,0 +1,5 @@
+{ 
+ "rate_type":"merchant_rate",
+ "currency_code":"USD",
+ "amount":"100"
+}

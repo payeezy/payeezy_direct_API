@@ -6,4 +6,3 @@
 	"amount": "1299",
 	"currency_code": "USD"
 }
-	

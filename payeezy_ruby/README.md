@@ -6,7 +6,12 @@ Integrate the Payeezy API with this ruby gem
 
 Payeezy ruby bindings
 
-# TokenBased Transactions (NEW) - 
+# German Direct Debit Transactions (NEW) - 
+*	Purchase Void - POST API
+*	Purchase Refund - POST API
+*	Credit API
+
+# TokenBased Transactions - 
 *	Generate Token with ta_token - auth false - GET API
 *	Generate Token with ta_token - auth true - GET API
 *	Generate Token without  ta_token & auth -  - GET API with 0$ Auth

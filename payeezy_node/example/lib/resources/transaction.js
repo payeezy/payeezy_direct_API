@@ -15,6 +15,11 @@ module.exports = Resource.extend({
 			tranType : 'authorize',
 			method: 'POST'
 		}),
+		
+		credit : method ({
+			tranType : 'credit',
+			method: 'POST'
+		}),
 			
 		capture : method ({
 			tranType : 'capture',

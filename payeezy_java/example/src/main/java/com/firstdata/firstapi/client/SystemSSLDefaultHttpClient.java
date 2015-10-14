@@ -10,67 +10,64 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.PoolingClientConnectionManager;
 
 @SuppressWarnings("deprecation")
-public class SystemSSLDefaultHttpClient  {
-    
-    private static final int DEFAULT_MAX_TOTAL_CONNECTIONS = 100;
+public class SystemSSLDefaultHttpClient {
 
-    private static final int DEFAULT_MAX_CONNECTIONS_PER_ROUTE = 5;
+	private static final int DEFAULT_MAX_TOTAL_CONNECTIONS = 100;
 
-    private static final int DEFAULT_READ_TIMEOUT_MILLISECONDS = (60 * 1000);
-    
-    private HttpClient httpClient;
+	private static final int DEFAULT_MAX_CONNECTIONS_PER_ROUTE = 5;
 
-    
-    public SystemSSLDefaultHttpClient() {
-//        @SuppressWarnings("deprecation")
-        SchemeRegistry schemeRegistry = new SchemeRegistry();
-        schemeRegistry.register(new Scheme("http", 80, PlainSocketFactory.getSocketFactory()));
-        schemeRegistry.register(new Scheme("https", 443, SSLSocketFactory.getSystemSocketFactory()));
+	private static final int DEFAULT_READ_TIMEOUT_MILLISECONDS = (60 * 1000);
 
-        PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(schemeRegistry);
-        connectionManager.setMaxTotal(DEFAULT_MAX_TOTAL_CONNECTIONS);
-        connectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_CONNECTIONS_PER_ROUTE);
+	private HttpClient httpClient;
 
-        this.httpClient = new DefaultHttpClient(connectionManager);
-//        setReadTimeout(DEFAULT_READ_TIMEOUT_MILLISECONDS);
-        
+	public SystemSSLDefaultHttpClient() {
+		// @SuppressWarnings("deprecation")
+		SchemeRegistry schemeRegistry = new SchemeRegistry();
+		schemeRegistry.register(new Scheme("http", 80, PlainSocketFactory.getSocketFactory()));
+		schemeRegistry.register(new Scheme("https", 443, SSLSocketFactory.getSystemSocketFactory()));
 
-    }
+		PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(schemeRegistry);
+		connectionManager.setMaxTotal(DEFAULT_MAX_TOTAL_CONNECTIONS);
+		connectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_CONNECTIONS_PER_ROUTE);
 
-    public SystemSSLDefaultHttpClient(Boolean allAllHostnameVerifier) {
-//      @SuppressWarnings("deprecation")
-        System.out.println("allAllHostnameVerifier:"+allAllHostnameVerifier);
-      SchemeRegistry schemeRegistry = new SchemeRegistry();
-      schemeRegistry.register(new Scheme("http", 80, PlainSocketFactory.getSocketFactory()));
-      org.apache.http.conn.ssl.SSLSocketFactory socketFactory;
-      if(allAllHostnameVerifier) {
-          javax.net.ssl.SSLSocketFactory wasSslFactory=(javax.net.ssl.SSLSocketFactory) javax.net.ssl.SSLSocketFactory.getDefault();
-          socketFactory =new org.apache.http.conn.ssl.SSLSocketFactory(wasSslFactory, org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-          HttpsURLConnection.setDefaultHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-      }
-      else {
-          socketFactory=SSLSocketFactory.getSystemSocketFactory();
-      }
-      schemeRegistry.register(new Scheme("https", 443, socketFactory));
+		this.httpClient = new DefaultHttpClient(connectionManager);
+		// setReadTimeout(DEFAULT_READ_TIMEOUT_MILLISECONDS);
 
-      PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(schemeRegistry);
-      connectionManager.setMaxTotal(DEFAULT_MAX_TOTAL_CONNECTIONS);
-      connectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_CONNECTIONS_PER_ROUTE);
+	}
 
-      this.httpClient = new DefaultHttpClient(connectionManager);
-//      setReadTimeout(DEFAULT_READ_TIMEOUT_MILLISECONDS);
+	public SystemSSLDefaultHttpClient(Boolean allAllHostnameVerifier) {
+		// @SuppressWarnings("deprecation")
+		System.out.println("allAllHostnameVerifier:" + allAllHostnameVerifier);
+		SchemeRegistry schemeRegistry = new SchemeRegistry();
+		schemeRegistry.register(new Scheme("http", 80, PlainSocketFactory.getSocketFactory()));
+		org.apache.http.conn.ssl.SSLSocketFactory socketFactory;
+		if (allAllHostnameVerifier) {
+			javax.net.ssl.SSLSocketFactory wasSslFactory = (javax.net.ssl.SSLSocketFactory) javax.net.ssl.SSLSocketFactory
+					.getDefault();
+			socketFactory = new org.apache.http.conn.ssl.SSLSocketFactory(wasSslFactory,
+					org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+			HttpsURLConnection
+					.setDefaultHostnameVerifier(org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+		} else {
+			socketFactory = SSLSocketFactory.getSystemSocketFactory();
+		}
+		schemeRegistry.register(new Scheme("https", 443, socketFactory));
 
-  }
-    
-    public static int getDefaultReadTimeoutMilliseconds() {
-        return DEFAULT_READ_TIMEOUT_MILLISECONDS;
-    }
+		PoolingClientConnectionManager connectionManager = new PoolingClientConnectionManager(schemeRegistry);
+		connectionManager.setMaxTotal(DEFAULT_MAX_TOTAL_CONNECTIONS);
+		connectionManager.setDefaultMaxPerRoute(DEFAULT_MAX_CONNECTIONS_PER_ROUTE);
 
-    
-    public HttpClient getHttpClient() {
-        return httpClient;
-    }
-    
-    
-    
+		this.httpClient = new DefaultHttpClient(connectionManager);
+		// setReadTimeout(DEFAULT_READ_TIMEOUT_MILLISECONDS);
+
+	}
+
+	public static int getDefaultReadTimeoutMilliseconds() {
+		return DEFAULT_READ_TIMEOUT_MILLISECONDS;
+	}
+
+	public HttpClient getHttpClient() {
+		return httpClient;
+	}
+
 }

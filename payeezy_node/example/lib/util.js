@@ -29,7 +29,6 @@ var util = module.exports = {
 		},
 		
 		getArgumentTypes: function(args) {
-//			var args = [].slice.call(arguments);
 			var argType = '';
 			for (var i in args) {
 				argType = argType + typeof args[i] + ','; 

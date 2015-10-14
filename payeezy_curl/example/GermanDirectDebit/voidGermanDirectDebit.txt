@@ -1,0 +1,7 @@
+{
+  "transaction_tag": "1427462780",
+  "transaction_type": "void",
+  "method": "direct_debit",
+  "amount": "1000",
+  "currency_code": "EUR"
+}

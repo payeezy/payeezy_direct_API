@@ -1,0 +1,8 @@
+{ 
+"amount":"100", 
+"transaction_type":"refund",
+"transaction_tag":"1442323088",
+"method":"credit_card", 
+"currency_code":"GBP", 
+"reversal_id":"Re-txn-123402"
+}

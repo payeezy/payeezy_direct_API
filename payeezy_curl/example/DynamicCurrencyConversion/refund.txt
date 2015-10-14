@@ -1,0 +1,7 @@
+{
+  "transaction_tag": "1442314795",
+  "transaction_type": "refund",
+  "method": "credit_card",
+  "amount": "10",
+  "currency_code": "GBP"
+}

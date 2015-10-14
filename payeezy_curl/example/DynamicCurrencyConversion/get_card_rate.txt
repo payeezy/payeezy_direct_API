@@ -1,0 +1,5 @@
+{ 
+"rate_type":"card_rate",
+ "bin":"438980",
+ "amount":"100"
+}

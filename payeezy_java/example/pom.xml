@@ -50,17 +50,5 @@
   <properties>
   	<spring-version>3.2.8.RELEASE</spring-version>
   </properties>
-  <build>
-  	<plugins>
-  		<plugin>
-  			<groupId>org.apache.maven.plugins</groupId>
-  			<artifactId>maven-checkstyle-plugin</artifactId>
-  			<version>2.12</version>
-  			<configuration>
-          		<configLocation>C:\work\softwares\STS\ModifiedCheckStyle.xml</configLocation>
-        	</configuration>
-  			
-  		</plugin>
-  	</plugins>
-  </build>
+  
 </project>

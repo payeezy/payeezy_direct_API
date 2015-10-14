@@ -3,19 +3,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
-	<!-- <bean id="jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper" />-->
+	
 	<bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
 		<property name="messageConverters">
 			<list>
 				<bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"></bean>
 				<bean class="org.springframework.http.converter.FormHttpMessageConverter" />
-				<!-- <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
-				</bean> -->
-				
-				<!--<bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>-->
-				<!-- <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
-				<bean class="org.springframework.http.converter.json.StringHttpMessageConverter"/>-->
-			</list>
+				</list>
 		
 		</property>
 		<!-- for authentication -->
@@ -25,20 +19,7 @@
 			</bean>
 		</property>
 		
-		<!-- <constructor-arg ref="httpComponentsClientHttpRequestFactory"/>-->
 	</bean>
-	
-	<!-- <bean id="jacksonObjectMapper" class="org.codehaus.jackson.map.ObjectMapper" />
-	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-	    <property name="targetObject" ref="jacksonObjectMapper" />
-	    <property name="targetMethod" value="configure" />
-	    <property name="arguments">
-	        <list>
-	            <value type="org.codehaus.jackson.map.DeserializationConfig.Feature">WRITE_NULL_PROPERTIES</value>
-	            <value>false</value>
-	        </list>
-	    </property>
-	</bean>-->
 	
 	<!-- CERT -->
  	<bean id="client" class="com.firstdata.firstapi.client.FirstAPIClientV2Helper">		
@@ -50,8 +31,4 @@
 		<property name="ta_token" value="123" />
 	</bean> 
 	
-	
-	<!-- <http>
-    <intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" requires-channel="https"/>      
- <http-basic/></http> -->
 </beans>

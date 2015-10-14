@@ -5,8 +5,7 @@ var Resource = require("../resource");
 module.exports = Resource.extend({
 		
 		path : '/transactions/tokens',
-		
-		getToken : method ({
+     	getToken : method ({
 			tranType : 'FDToken',
 			method: 'POST'
 		})

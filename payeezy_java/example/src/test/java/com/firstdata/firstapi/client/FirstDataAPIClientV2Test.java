@@ -41,20 +41,21 @@ public class FirstDataAPIClientV2Test {
     
     //@Test
     public void doGetTAToken()throws Exception {
-        assertNotNull("RESTTemplate is null:", restTemplate);
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
+    	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
         trans.getCard().setNumber("4788250000028291");
         trans.getCard().setName("John Smith");
         trans.getCard().setExpiryDt("1030");
         FirstAPIClientV2Helper.OVERRIDE = "override";
-        //client.setAppId("C5VAeX3WwStH0ZDnlF4eXVhHJiIedDtY");
+        
         client.setAppId("fP0iYUx4oJ8LolKl2LiOT1Zo94mL0IDQ");
         client.setSecuredSecret("2b940ece234ee38131e70cc617aa2afa3d7ff8508856917958e7feb3ef190447");
         client.setToken("fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6");
         client.setTrToken("y6pzAbc3Def123");
         client.setMerchantid("OGEzNGU3NjM0ODQyMTU3NzAxNDg0MjE4NDY4ZTAwMDA=");
-        //client.setUrl("https://api-int.payeezy.com/v1");
+        
         client.setUrl("https://api-cert.payeezy.com/v1");
         FirstAPIClientV2Helper.OVERRIDE = "overrides";
         Token token = new Token();
@@ -64,7 +65,7 @@ public class FirstDataAPIClientV2Test {
         ta.setExpiryDt("0416");
         ta.setCvv("123");
         ta.setType("discover");
-        //ta.setValue(FirstAPIClientV2Helper.TA_TOKEN_VALUE);
+        
         ta.setValue(FirstAPIClientV2Helper.TA_TOKEN_VALUE);
         
         token.setTokenData(ta);
@@ -74,13 +75,16 @@ public class FirstDataAPIClientV2Test {
         
         //TransactionResponse response=client.getTokenTransaction(getPrimaryTransaction());
         TransactionResponse response=client.getTokenTransaction(trans);
+        
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     //@Test
     public void doGetToken()throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -111,22 +115,14 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
-    /*
-     * REM curl -k -X POST -H "Content-Type:application/json" 
-     * -H "apikey:fP0iYUx4oJ8LolKl2LiOT1Zo94mL0IDQ" -H 
-     * "token:fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6" 
-     * -H "Authorization:YzA2MTc4OWIyZTI2Nzc1ODZhNmRhOTI4MjIzM2QxYWI3YzliMzg4MTRkNjJlZDk2MjJiOTM2MTJjMDJmOGY2Zg" 
-     * -H "nonce:4855700038839132000" -H "timestamp:1430763448135" 
-     * --data @FDTokenAuthorize.txt  https://api-int.payeezy.com/v1/transactions -v
-     * 
-     */
-    
-    //////////////////get token auth true///////////////////////////////
+
     
     @Test
     public void doPostTATokenGenerateSample() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -156,10 +152,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenGenerateSample2() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -192,6 +190,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     //////////////////get token auth true///////////////////////////////
@@ -199,6 +198,7 @@ public class FirstDataAPIClientV2Test {
 
     @Test
     public void doPostTATokenGenerateAuthTrue() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -225,6 +225,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     
@@ -233,6 +234,7 @@ public class FirstDataAPIClientV2Test {
     
     @Test
     public void doPostTATokenGenerate() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -259,12 +261,14 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     
     @Test
     public void doPostTATokenAuthorize() throws Exception 
     {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -326,10 +330,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenCapture() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -422,10 +428,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenPurchase() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -486,12 +494,14 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
 
     
     @Test
     public void doPostTATokenRefund() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -589,11 +599,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenVoid() throws Exception {
-    	
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -689,6 +700,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     
     }
     
@@ -699,6 +711,7 @@ public class FirstDataAPIClientV2Test {
     @Test
     public void doPostTATokenAuthorizeVisa() throws Exception 
     {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -761,10 +774,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenCaptureVisa() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -857,11 +872,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenPurchaseVisa() throws Exception {
-    	
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -921,10 +937,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenGenerateVisa() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -951,10 +969,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenRefundVisa() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1052,10 +1072,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenVoidVisa() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1152,6 +1174,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     
     }
     
@@ -1162,6 +1185,7 @@ public class FirstDataAPIClientV2Test {
     @Test
     public void doPostTATokenAuthorizeAmex() throws Exception 
     {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -1223,10 +1247,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenCaptureAmex() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -1319,10 +1345,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenPurchaseAmex() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1383,10 +1411,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenGenerateAmex() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -1413,10 +1443,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenRefundAmex() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1514,10 +1546,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenVoidAmex() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1614,6 +1648,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     
     }
     
@@ -1624,6 +1659,7 @@ public class FirstDataAPIClientV2Test {
     @Test
     public void doPostTATokenAuthorizeDiscover() throws Exception 
     {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -1685,10 +1721,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenCaptureDiscover() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
@@ -1781,10 +1819,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenPurchaseDiscover() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1845,10 +1885,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenGenerateDiscover() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -1875,10 +1917,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("FD Token : " + response.getToken().getTokenData().getValue());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenRefundDiscover() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -1976,10 +2020,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doPostTATokenVoidDiscover() throws Exception {
+    	 log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
     	
     	// Generate Token
     	assertNotNull("RESTTemplate is null:", restTemplate);
@@ -2077,6 +2123,7 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response2);
         assertNull("Error in response",response2.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response2.getTransactionTag(),response2.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     
     }
     
@@ -2085,6 +2132,7 @@ public class FirstDataAPIClientV2Test {
     
     //@Test
     public void doPostToken()throws Exception {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest trans = getPrimaryTransaction();
@@ -2114,10 +2162,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     @Test
     public void doAuthorizePayment()throws Exception {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionResponse response=client.authorizeTransaction(getPrimaryTransaction());
@@ -2125,10 +2175,12 @@ public class FirstDataAPIClientV2Test {
         assertNotNull("Response is null ",response);
         assertNull("Error in response",response.getError());
         log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
 
     @Test
     public void doVoidPayment()throws Exception {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest req=getPrimaryTransaction();
@@ -2149,12 +2201,13 @@ public class FirstDataAPIClientV2Test {
 //            log.info("Transaction Tag:{} Transaction id:{}",response.getTransactionTag(),response.getTransactionId());
 
         }
-        
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     
     @Test
     public void doRefundPayment()throws Exception {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest req=getPrimaryTransaction();
@@ -2173,11 +2226,13 @@ public class FirstDataAPIClientV2Test {
             assertNotNull("Response is null ",response);
             assertNull(response.getError());
         }
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
         
     }
     
     @Test
     public void doCapturePayment()throws Exception {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         assertNotNull("RESTTemplate is null:", restTemplate);
         assertNotNull("clietn is null:", client);
         TransactionRequest req=getPrimaryTransaction();
@@ -2197,12 +2252,13 @@ public class FirstDataAPIClientV2Test {
             assertNotNull("Response is null ",response);
             assertNull(response.getError());
         }
-        
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
     }
     
     
 
     private TransactionRequest getPrimaryTransaction() {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         TransactionRequest request=new TransactionRequest();
         request.setAmount("1100");
         request.setCurrency("USD");
@@ -2222,16 +2278,19 @@ public class FirstDataAPIClientV2Test {
         address.setZip("11747");
         address.setCountry("US");
         //request.setTa_token(null);
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
         return request;
     }
      
     private TransactionRequest getSecondaryTransaction() {
+    	log.info("+++++++++++++++++++++++++++++++++++++ start ++++++++++++++++++");
         TransactionRequest trans=new TransactionRequest();
         trans.setPaymentMethod("credit_card");
         trans.setAmount("0.00");
         trans.setCurrency("USD");
         trans.setTransactionTag("349990997");
         trans.setId("07698G");
+        log.info("++++++++++++++++++++++++++++++++++++++ end +++++++++++++++++");
         return trans;
     }
     

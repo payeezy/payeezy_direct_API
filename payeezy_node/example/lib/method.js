@@ -22,9 +22,7 @@ module.exports = function method(resProp) {
 	    if (args.length) {
 	    	throw new Error('invalid_request Invalid number of arguments provided '+util.getArgumentTypes(logArgs)+'. Please refer to API usage guide');
 	    }
-//		if (!callback) {
-//	    	throw new Error('invalid_request callback function not provided. Please refer to API usage guide');
-//	    }
+
 	    var requestData = {};
 	    for (var i in data) {
 	    	requestData[i] = data[i];

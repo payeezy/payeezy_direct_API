@@ -1,0 +1,54 @@
+{  
+   "method":"direct_debit",
+   "transaction_type":"purchase",
+   "amount":"1000",
+   "currency_code":"EUR",
+   "direct_debit":{  
+      "iban":"DE34500100600032121604",
+      "mandate_ref":"ABCD1234",
+      "bic":"PBNKDEFFXXX"
+   },
+   "level2":{  
+      "tax1_amount":10,
+      "tax1_number":"2",
+      "tax2_amount":5,
+      "tax2_number":"3",
+      "customer_ref":"customer1"
+   },
+   "level3":{  
+      "alt_tax_amount":10,
+      "alt_tax_id":"098841111",
+      "discount_amount":1,
+      "duty_amount":0.5,
+      "freight_amount":5,
+      "ship_from_zip":"11235",
+      "ship_to_address":{  
+         "city":"New York",
+         "state":"NY",
+         "zip":"11235",
+         "country":"USA",
+         "email":"abc@firstdata.com",
+         "name":"Bob Smith",
+         "phone":"212-515-1111",
+         "address_1":"123 Main Street",
+         "customer_number":"12345"
+      },
+      "line_items":[  
+         {  
+            "description":"item 1",
+            "quantity":"5",
+            "commodity_code":"C",
+            "discount_amount":1,
+            "discount_indicator":"G",
+            "gross_net_indicator":"P",
+            "line_item_total":10,
+            "product_code":"F",
+            "tax_amount":5,
+            "tax_rate":0.2800000000000000266453525910037569701671600341796875,
+            "tax_type":"Federal",
+            "unit_cost":1,
+            "unit_of_measure":"meters"
+         }
+      ]
+   }
+}

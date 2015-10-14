@@ -1,0 +1,24 @@
+{
+    "method": "direct_debit",
+    "transaction_type": "purchase",
+    "amount": "1000",
+    "currency_code": "EUR",
+    "direct_debit": {
+        "iban": "DE34500100600032121604",
+        "mandate_ref": "ABCD1234",
+        "bic": "PBNKDEFFXXX"
+    },
+    "billing_address": {
+        "name": "P.Kunde",
+        "city": "random",
+        "country": "GERMANY",
+        "email": "Monalisa.mishra@firstdata.com",
+        "phone": {
+            "type": "Cell",
+            "number": "678-468-2665"
+        },
+        "street": "LangeStr.12",
+        "state_province": "LEIPZIG",
+        "zip_postal_code": "04103"
+ }
+}

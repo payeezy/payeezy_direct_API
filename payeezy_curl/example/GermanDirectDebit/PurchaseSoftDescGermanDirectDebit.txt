@@ -1,0 +1,21 @@
+{  
+   "method":"direct_debit",
+   "transaction_type":"purchase",
+   "amount":"1000",
+   "currency_code":"EUR",
+   "direct_debit":{  
+      "iban":"DE34500100600032121604",
+      "mandate_ref":"ABCD1234",
+      "bic":"PBNKDEFFXXX"
+   },
+   "soft_descriptors":{  
+      "dba_name":"SoftDesc 1",
+      "street":"123 Main Street",
+      "region":"NY",
+      "mid":"367337278884",
+      "mcc":"8812",
+      "postal_code":"11375",
+      "country_code":"USA",
+      "merchant_contact_info":"123 Main street"
+   }
+}
