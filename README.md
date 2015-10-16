@@ -13,6 +13,14 @@ NOTE: The merchant/third party is responsible for PCI compliance and may be requ
 # Payeezy supported language
 Java, PHP, Python,Ryby, nodeJS and Curl. 
 
+# Release notes:
+* Tokenised Transactions - Token is generated for the card and the transactions are made using the token.US merchants will receive Transarmor multi-use tokens and EU merchants will receive Datavault tokens.
+* AVS,CVV, SoftDescriptor and 3DS Card Transactions - This feature is used to make credit card transactions [Non-Tokenised].<US merchants/EU Merchant
+* Dynamic Currency Conversion and Dynamic Pricing - <US merchants/EU Merchant>
+* TimeOutReversal - <EU Merchants> Any transaction can be reversed except for VOID.
+We will have to send an additional attribute "reversal_id" in the request payload. 
+* GermanDirectDebit - <EU Merchants> This method is applicable only to merchants domiciled in Germany.
+
 # Getting Started with Payeezy
 Using below listed steps, you can easily integrate your mobile/web payment application with Payeezy APIs and go LIVE!
 *	LITE  - REGISTRATION  
