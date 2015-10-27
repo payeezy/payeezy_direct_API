@@ -2,7 +2,8 @@
 
 ##Installation
 
-*To install the payeezy node.js module using [`npm`](https://www.npmjs.com/):
+To install the payeezy node.js module using [`npm`](https://www.npmjs.com/):
+
 `npm install payeezy`
 
 ## Testing
@@ -16,7 +17,11 @@ $ npm test
 
 ##Usage
 
-*Refer to test/payeezy-test.js for code samples on Authorize, Purchase, Capture, Void and Refund Transaction
+Refer to test/payeezy-test.js for code samples on Authorize, Purchase, Capture, Void and Refund Transaction
+
+## API Overview
+
+Refer to the [`documentation`] https://developer.payeezy.com/docs-sandbox on the Payeezy Developer Portal
 
 ## Contributing
 ```bash
