@@ -19,12 +19,12 @@ Also 'npm install payeezy' is not in sync with github. Please refer github for a
 
 ## Payeezy nodeJS bindings
 
-# German Direct Debit Transactions (NEW) - 
+## German Direct Debit Transactions (NEW) - 
 *	Purchase Void - POST API
 *	Purchase Refund - POST API
 *	Credit API
 
-# TokenBased Transactions - 
+## TokenBased Transactions - 
 *	Now Payeezy supports Generate Token - for tokenize auth and purchase transacitons.
 
 ## Contributing
