@@ -10,7 +10,7 @@ module.exports = function method(resProp) {
 		var data = util.isObject(args[args.length-1])? args.pop() : {};
 
 		var urlParams = resProp.urlParams;
-		
+
 		var uri = resProp.path || '';
 		for (var i in urlParams) {
 			var value = args.shift();

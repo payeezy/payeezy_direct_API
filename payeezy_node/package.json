@@ -1,12 +1,15 @@
 {
   "name": "payeezy",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "private": "true",
   "description": "Integrate with Payeezy",
   "main": "lib/payeezy.js",
    "repository": {
     "type": "git",
-    "url": "git://git.com/"
+    "url": "https://github.com/payeezy/payeezy_direct_API.git"
+  },
+   "scripts": {
+    "test": "node test/payeezy-test.js"
   },
   "keywords": [
     "firstdata",
@@ -23,6 +26,6 @@
     "name": "Payeezy Support",
     "email": "support@payeezy.com"
   },
-  "license": "ISC",
-  "readme": ""
+  "license": "MIT",
+  "readme": "https://github.com/payeezy/payeezy_direct_API/blob/master/payeezy_node/README.md"
 }
