@@ -10,6 +10,10 @@ Install all the dependencies:
 
 npm install (you may need to prefix this with sudo if you're on Mac)
 
+npm install crypto-js
+
+npm install q
+
 ## Payeezy nodeJS bindings
 
 # German Direct Debit Transactions (NEW) - 
