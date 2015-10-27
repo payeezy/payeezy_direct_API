@@ -21,7 +21,7 @@ Refer to test/payeezy-test.js for code samples on Authorize, Purchase, Capture, 
 
 ## API Overview
 
-Refer to the [`documentation`] https://developer.payeezy.com/docs-sandbox on the Payeezy Developer Portal
+Refer to the [`documentation`](https://developer.payeezy.com/docs-sandbox) on the Payeezy Developer Portal
 
 ## Contributing
 ```bash
