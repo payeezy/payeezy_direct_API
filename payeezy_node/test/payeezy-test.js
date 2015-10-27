@@ -1,4 +1,3 @@
-
 // Sandbox Credentials - replace them for Live environment
 var apikey = 'LtBMzBpYKaj8AkWERomJdsDDYfkdDDLh';
 var apisecret = '37c3a606ea32b2e43abab20aff2d49d60949351350bc9a4810df706a70dc22cc';
@@ -18,9 +17,11 @@ payeezy.host = "api-cert.payeezy.com";
 runExamples();
 
 
-
 // Below are the helper methods that will perform Authorize, Purchase, Capture, Void & Refund.
 
+function runExamples() {
+    performAuthorizeTransaction('capture');
+}
 
 function performAuthorizeTransaction(secondaryTransactionType) {
     console.log('*******************************************\nPerforming Authorize Transaction\n************************************')
@@ -134,6 +135,7 @@ function performSecondaryTransaction(secondaryTransactionType, id, tag, amount) 
                 }
                 if (response) {
                     console.log('Refund Successful');
+                    generateToken();
                 }
             });
     } else if (secondaryTransactionType == 'void') {
@@ -159,9 +161,56 @@ function performSecondaryTransaction(secondaryTransactionType, id, tag, amount) 
 
 }
 
+function generateToken() {
+    console.log('*******************************************\nCreating FD-Token for a Credit Card\n************************************')
 
-
-function runExamples(){
-    performAuthorizeTransaction('capture');
+    payeezy.tokens.getToken({
+            type: "FDToken",
+            credit_card: {
+                type: "VISA",
+                cardholder_name: "Tom Eck",
+                card_number: "4788250000028291",
+                exp_date: "1030",
+                cvv: "123"
+            },
+            auth: "false",
+            ta_token: "NOIW"
+        },
+        function(error, response) {
+            if (error) {
+                console.log('Get Token for Card Failed\n' + error);
+            }
+            if (response) {
+                console.log('FD-Token is generated Successfully, Token Value: ' + JSON.stringify(response.token, null, 4));
+                tokenBasedAuthorizeTransaction();
+            }
+        });
 }
 
+function tokenBasedAuthorizeTransaction() {
+
+    console.log('*******************************************\n Authorize using FD - Token \n************************************')
+
+    payeezy.transaction.tokenAuthorize({
+        merchant_ref: "Simple FD Token Authorize",
+        method: "token",
+        amount: "200",
+        currency_code: "USD",
+        token: {
+            token_type: "FDToken",
+            token_data: {
+                type: "visa",
+                value: "2537446225198291",
+                cardholder_name: "Tom Eck",
+                exp_date: "1030"
+            }
+        }
+    }, function(error, response) {
+        if (error) {
+            console.log('Authorize Token Failed\n' + error);
+        }
+        if (response) {
+            console.log('Authorize Token -  Success.\nTransaction Tag: ' + response.transaction_tag);
+        }
+    });
+}

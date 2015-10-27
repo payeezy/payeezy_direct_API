@@ -1,4 +1,4 @@
-# Payeezy node.js Installation 
+# Payeezy node.js Installation and Usage 
 
 ##Installation
 
@@ -17,7 +17,9 @@ $ npm test
 
 ##Usage
 
-Refer to test/payeezy-test.js for code samples on Authorize, Purchase, Capture, Void and Refund Transaction
+Refer to test/payeezy-test.js for nodejs code samples on how to perform Authorize, Purchase, Capture, Void and Refund Transactions.
+Also includes sample code to tokenize a credit card and perform a token based Authorize transaction.
+
 
 ## API Overview
 

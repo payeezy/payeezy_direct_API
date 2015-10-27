@@ -1,7 +1,6 @@
 {
   "name": "payeezy",
   "version": "1.0.2",
-  "private": "true",
   "description": "Integrate with Payeezy",
   "main": "lib/payeezy.js",
    "repository": {
@@ -27,5 +26,5 @@
     "email": "support@payeezy.com"
   },
   "license": "MIT",
-  "readme": "https://github.com/payeezy/payeezy_direct_API/blob/master/payeezy_node/README.md"
+  "readme": "README.md"
 }

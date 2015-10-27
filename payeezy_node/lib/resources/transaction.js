@@ -15,6 +15,16 @@ module.exports = Resource.extend({
 			tranType : 'authorize',
 			method: 'POST'
 		}),
+
+		tokenAuthorize : method ({
+			tranType : 'authorize',
+			method: 'POST'
+		}),
+
+		tokenPurchase: method ({
+			tranType : 'purchase',
+			method: 'POST'
+		}),
 		
 		credit : method ({
 			tranType : 'credit',
