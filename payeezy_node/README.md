@@ -14,6 +14,9 @@ npm install crypto-js
 
 npm install q
 
+Note: You need sudo access to execute command.
+Also 'npm install payeezy' is not in sync with github. Please refer github for anyupdate. 
+
 ## Payeezy nodeJS bindings
 
 # German Direct Debit Transactions (NEW) - 
@@ -22,10 +25,7 @@ npm install q
 *	Credit API
 
 # TokenBased Transactions - 
-*	Generate Token with ta_token - auth false - GET API
-*	Generate Token with ta_token - auth true - GET API
-*	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
-*	Generate Token - Backward compatible -  GET API call
+*	Now Payeezy supports Generate Token - for tokenize auth and purchase transacitons.
 
 ## Contributing
 
