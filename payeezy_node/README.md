@@ -1,6 +1,16 @@
 # Payeezy nodeJS bindings 
 
-Payeezy nodeJS bindings
+##Install Node
+
+Go to http://nodejs.org
+
+##Run Locally
+
+Install all the dependencies:
+
+npm install (you may need to prefix this with sudo if you're on Mac)
+
+## Payeezy nodeJS bindings
 
 # German Direct Debit Transactions (NEW) - 
 *	Purchase Void - POST API
