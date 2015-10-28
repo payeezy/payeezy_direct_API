@@ -249,7 +249,7 @@ class Payeezy
               'iban'=> $args['iban'],
               'mandate_ref'=> $args['mandate_ref'],
               'bic'=> $args['bic'],
-            )
+            ),
 			'billing_address'=> array(
               'name'=> $args['name'],
               'city'=> $args['city'],
@@ -301,7 +301,7 @@ class Payeezy
               'iban'=> $args['iban'],
               'mandate_ref'=> $args['mandate_ref'],
               'bic'=> $args['bic'],
-            )
+            ),
 			'soft_descriptors'=> array(
               'dba_name'=> $args['dba_name'],
               'street'=> $args['street'],
@@ -350,13 +350,13 @@ class Payeezy
           'iban'=> $args['iban'],
           'mandate_ref'=> $args['mandate_ref'],
           'bic'=> $args['bic'],
-        )
+        ),
 		'level2'=> array(
           'tax1_amount'=> $args['tax1_amount'],
           'tax2_amount'=> $args['tax2_amount'],
           'tax2_number'=> $args['tax2_number'],
 		  'customer_ref'=> $args['customer_ref'],
-		  )	
+		  ),
   		'level3'=> array(
             'alt_tax_amount'=> $args['alt_tax_amount'],
             'alt_tax_id'=> $args['alt_tax_id'],
@@ -374,7 +374,7 @@ class Payeezy
             'phone'=> $args['phone'],
   		  	'address_1'=> $args['address_1'],
             'customer_number'=> $args['customer_number'],
-  		  )	
+  		  ),	
 		'line_items'=> array(
 		  'description'=> $args['description'],
 		  'quantity'=> $args['quantity'],
