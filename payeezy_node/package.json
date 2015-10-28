@@ -1,6 +1,6 @@
 {
   "name": "payeezy",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Integrate with Payeezy",
   "main": "lib/payeezy.js",
    "repository": {
@@ -25,6 +25,5 @@
     "name": "Payeezy Support",
     "email": "support@payeezy.com"
   },
-  "license": "MIT",
-  "readme": "README.md"
+  "license": "MIT"
 }

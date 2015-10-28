@@ -1,6 +1,6 @@
-# Payeezy node.js Installation and Usage 
+## Payeezy node.js Installation and Usage 
 
-##Installation
+## Installation
 
 To install the payeezy node.js module using [`npm`](https://www.npmjs.com/):
 
@@ -15,7 +15,7 @@ $ npm install
 $ npm test
 ```
 
-##Usage
+## Usage
 
 Refer to test/payeezy-test.js for nodejs code samples on how to perform Authorize, Purchase, Capture, Void and Refund Transactions.
 Also includes sample code to tokenize a credit card and perform a token based Authorize transaction.
@@ -26,6 +26,7 @@ Also includes sample code to tokenize a credit card and perform a token based Au
 Refer to the [`documentation`](https://developer.payeezy.com/docs-sandbox) on the Payeezy Developer Portal
 
 ## Contributing
+
 ```bash
 1. Fork it 
 2. Create your feature branch (`git checkout -b my-new-feature`)

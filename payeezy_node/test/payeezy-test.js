@@ -1,9 +1,9 @@
-// Sandbox Credentials - replace them for Live environment
-var apikey = 'LtBMzBpYKaj8AkWERomJdsDDYfkdDDLh';
-var apisecret = '37c3a606ea32b2e43abab20aff2d49d60949351350bc9a4810df706a70dc22cc';
+// Sandbox Credentials below
+var apikey = 'y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a';
+var apisecret = '86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7';
 var merchant_token = 'fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6';
 
-var payeezy = require('../lib/payeezy.js')(apikey, apisecret, merchant_token);
+var payeezy = require('payeezy')(apikey, apisecret, merchant_token);
 payeezy.version = "v1";
 
 
