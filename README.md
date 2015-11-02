@@ -17,8 +17,8 @@ Java, PHP, Python,Ryby, nodeJS and Curl.
 * Tokenised Transactions - Token is generated for the card and the transactions are made using the token.US merchants will receive Transarmor multi-use tokens and EU merchants will receive Datavault tokens.
 * AVS,CVV, SoftDescriptor and 3DS Card Transactions - This feature is used to make credit card transactions [Non-Tokenised].<US merchants/EU Merchant
 * Dynamic Currency Conversion and Dynamic Pricing - <US merchants/EU Merchant>
-* TimeOutReversal - <EU Merchants> Any transaction can be reversed except for VOID.
-We will have to send an additional attribute "reversal_id" in the request payload. 
+* TimeOutReversal - US merchants/EU Merchants> Any transaction can be reversed except for VOID.
+We will have to send an additional attribute "reversal_id" in the request payload. This method is applicable only to merchants domiciled in US and Europe.
 * GermanDirectDebit - <EU Merchants> This method is applicable only to merchants domiciled in Germany.
 
 # Getting Started with Payeezy
