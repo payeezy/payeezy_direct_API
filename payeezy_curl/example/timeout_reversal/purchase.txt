@@ -1,25 +1,25 @@
-{ 
-"amount":"100", 
-"transaction_type":"purchase", 
-"method":"credit_card", 
-"currency_code":"GBP", 
-"credit_card":{
- "type":"visa",
- "cardholder_name":"Eck Test 3",
- "card_number":"4035874000424977",
- "exp_date":"1218"
-}, 
-"billing_address":{
- "city":"St. Louis",
- "country":"US",
- "email":"abc@main.com",
- "phone":{
- "type":"home",
- "number":"212-515-1212"
- },
- "street":"12115 LACKLAND",
- "state_province":"MO",
- "zip_postal_code":"63146 "
-},
-"reversal_id":"Re-txn-123412B2"
+{
+  "amount": "100",
+  "transaction_type": "purchase",
+  "method": "credit_card",
+  "currency_code": "USD",
+  "credit_card": {
+    "type": "visa",
+    "cardholder_name": "John Smith",
+    "card_number": "4788250000028291",
+    "exp_date": "1218"
+  },
+  "billing_address": {
+    "city": "St. Louis",
+    "country": "US",
+    "email": "abc@main.com",
+    "phone": {
+      "type": "home",
+      "number": "212-515-1212"
+    },
+    "street": "12115 LACKLAND",
+    "state_province": "MO",
+    "zip_postal_code": "63146 "
+  },
+  "reversal_id": "Re-txn-123412B2"
 }

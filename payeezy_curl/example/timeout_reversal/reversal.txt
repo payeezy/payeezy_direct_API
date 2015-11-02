@@ -1,7 +1,7 @@
-{ 
-"amount":"100", 
-"transaction_type":"void", 
-"method":"credit_card", 
-"currency_code":"GBP", 
-"reversal_id":"Re-txn-12311A1"
+{
+  "amount": "100",
+  "transaction_type": "void",
+  "method": "credit_card",
+  "currency_code": "USD",
+  "reversal_id": "Re123312-txn-1123123123"
 }

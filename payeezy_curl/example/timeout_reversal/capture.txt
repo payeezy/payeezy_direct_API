@@ -1,8 +1,8 @@
 {
-"amount":"100", 
-"transaction_type":"capture",
-"transaction_tag": "1442322853",
-"method":"credit_card", 
-"currency_code":"GBP", 
-"reversal_id":"Re-txn-12341203"
+	"amount":"100", 
+	"transaction_type":"capture",
+	"transaction_tag": "1442322853",	
+	"method":"credit_card", 
+	"currency_code":"USD", 
+	"reversal_id":"Re-txn-12341203"
 }

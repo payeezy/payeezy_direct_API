@@ -3,6 +3,6 @@
 "transaction_type":"refund",
 "transaction_tag":"1442323088",
 "method":"credit_card", 
-"currency_code":"GBP", 
+"currency_code":"USD", 
 "reversal_id":"Re-txn-123402"
 }
