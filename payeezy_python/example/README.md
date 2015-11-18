@@ -5,45 +5,24 @@
 *	Purchase Refund - POST API
 *	Credit API
 
-<<<<<<< HEAD
 This is version payeezy 2.0 with which you could use transactions into your project using following steps
 
- Download and install Requests 2.3 from the link below which is a dependancy for Payeezy.
- https://github.com/kennethreitz/requests
- 
-=======
- This is version payeezy 1.0 with which you could use transactions into your project using following steps
- 
- Download and install Requests 2.3 from the link below which is a dependancy for Payeezy.
+Download and install Requests 2.3 from the link below which is a dependancy for Payeezy.
  https://github.com/kennethreitz/requests
 
->>>>>>> origin/master
  1. unzip the folder and open cmd / terminal
  2. use 'cd' command to payeezy folder
  3. run 'python setup.py build'
  4. run 'python setup.py install'
  5. Now you should be able to run example.py using ' python example.py'
 
- Using payeezy with Django or any other python script support platform
-<<<<<<< HEAD
- 
-=======
->>>>>>> origin/master
- use statement 'import payeezy' to be able to call the methods in transactions#
-
 # Setting attributes:
 
-<<<<<<< HEAD
- payeezy.apikey= ""
- payeezy.apisecret= ""
- payeezy.token = ""
- payeezy.url = "" 
-=======
 payeezy.apikey= ""
 payeezy.apisecret= ""
 payeezy.token = ""
 payeezy.url = "" 
->>>>>>> origin/master
+payeezy.tokenurl = ""  (optional)
 
 ## Contributing
 
