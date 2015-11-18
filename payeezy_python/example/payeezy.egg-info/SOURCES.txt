@@ -2,7 +2,6 @@ README.txt
 setup.py
 payeezy/__init__.py
 payeezy/api_methods.py
-payeezy/api_methods_exiting.py
 payeezy/http_authorization.py
 payeezy.egg-info/PKG-INFO
 payeezy.egg-info/SOURCES.txt

@@ -10,34 +10,36 @@
 import os, sys          # Standard system functions
 import time  			# Get Timestamp
 import socket           # support functions for HTTPS connections - dependancy for HTTPAdapter
-import ssl           	# TLSv1 support 
+import ssl
+
 
 try:
 	import base64 		# Base 64 encoding/decoding lib
-except Exception, BASE64LIB_Error:
-	raise BASE64_IMPORT_Error
+except Exception as BASE64LIB_Error:
+    raise BASE64_IMPORT_Error
 
 from base64 import b64encode
 
 try:
 	import json 		# Json Lib for data type conversions - REST Calls/Data output format
-except Exception, JSONLIB_Error:
-	raise JSON_IMPORT_Error
+except Exception as JSONLIB_Error:
+    raise JSON_IMPORT_Error
 
 try:
 	import hashlib      
-except Exception, HASHLIB_Error:
-	raise HASHLIB_IMPORT_Error
+except Exception as HASHLIB_Error:
+    raise HASHLIB_IMPORT_Error
 
 try:
 	import hmac      # SHA1 encryption to accomodate the atmosphere varibles
-except Exception, HMAC_Error:
-	raise HMAC_IMPORT_Error
+except Exception as HMAC_Error:
+    raise HMAC_IMPORT_Error
+
 
 try:
 	import requests 	# Apache2 Licensed HTTP library - has methods to make REST calls
-except Exception, REQUESTSLIB_Error:
-	raise REQUESTSLIB_Error
+except Exception as REQUESTSLIB_Error:
+    raise REQUESTSLIB_Error
 
 from requests.auth import HTTPBasicAuth
 from requests.adapters import HTTPAdapter
@@ -56,13 +58,12 @@ class MyAdapter(HTTPAdapter):
 class PayeezyHTTPAuthorize(object):
 
 	# init function
-	# tokenURL is optional and required if you process token based transaction 
-	def __init__(self, apiKey,apiSecret, token, url,tokenURL):
+	def __init__(self, apiKey,apiSecret, token, url,tokenurl):
 		self.apikey = apiKey
 		self.apisecret = apiSecret
 		self.token = token
 		self.url = url
-		self.tokenURL = tokenURL
+		self.tokenurl = tokenurl
 		self.timeout = 30 # max timeout is 30 sec
 
 	# HMAC Generation
@@ -82,14 +83,14 @@ class PayeezyHTTPAuthorize(object):
 		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
 		result = response.post(self.tokenURL, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':'xxxxx'}, data=self.payload)
 		return result
-
+			
 	#Generic method to make calls for primary transactions
 	def makeCardBasedTransactionPostCall(self, payload):
 		response = requests.Session()
 		response.mount('https://', MyAdapter())
 		self.payload = json.dumps(payload)
 		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
-		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':'xxxxx'}, data=self.payload)
+		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':authorizationVal}, data=self.payload)
 		return result
 
 
@@ -99,7 +100,8 @@ class PayeezyHTTPAuthorize(object):
 		response.mount('https://', MyAdapter())
 		self.url =  self.url + '/' + transactionID
 		self.payload = json.dumps(payload)
-		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':'xxxxx'}, data=self.payload)
+		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
+		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':authorizationVal}, data=self.payload)
 		return result
 
 		

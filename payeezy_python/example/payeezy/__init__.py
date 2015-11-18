@@ -4,7 +4,6 @@ token = ""
 baseURL = ""
 tokenURL = "" # optional parameter for oken based transaction 
 
-
 # Resource
 import payeezy.http_authorization
 from payeezy.api_methods import Payeezy

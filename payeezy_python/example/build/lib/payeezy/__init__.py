@@ -2,11 +2,11 @@ apikey = ""
 apisecret = ""
 token = ""
 baseURL = ""
-
+tokenURL = "" # optional parameter for oken based transaction 
 
 # Resource
-import http_authorization
-from api_methods import Payeezy
+import payeezy.http_authorization
+from payeezy.api_methods import Payeezy
 
 transactions = Payeezy()
 
@@ -18,6 +18,7 @@ _ALLOWED_ATTRIBUTES = (
     'apikey',
 	'apisecret',
 	'token',
-	'baseURL'
+	'baseURL',
+	'tokenURL' # optional parameter for oken based transaction 
 )
 _original_module = _sys.modules[__name__]

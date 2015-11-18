@@ -1,6 +1,6 @@
 #####################################################################################################################################################
-#   File Name     :  Security.py                                                        #
-#   Methods Type  :  Transactions - authorize, payment, capture, void, return | Merchants - boarding                      #
+#		File Name   	:  Security.py																												#
+#		Methods	Type	:  Transactions - authorize, payment, capture, void, return | Merchants - boarding											#
 #####################################################################################################################################################
 import os, sys 
 import payeezy        # Standard system functions
@@ -9,57 +9,133 @@ import json
 
 class Payeezy(object):
 
-  def __init__(self):  
-    return None;
-  
-def authorize(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
-    
-    makePayload_output = self.makePayload({ "amount":amount,
-                        "currency_code":currency_code,
-                        "card_type":card_type,
-                        "cardholder_name":cardholder_name,
-                        "card_number":card_number,
-                        "card_expiry":card_expiry,
-                        "card_cvv":card_cvv,
-                        "description":description,
-                        "transactionType":'authorize'})  
-    return self.makePrimaryTransaction( payload=makePayload_output['payload']);
+	def __init__(self):
+		return None
+	
+	def authorize(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
+		
+		makePayload_output = self.makePayload(amount=amount, 
+											  currency_code=currency_code, 
+											  card_type=card_type, 
+											  cardholder_name=cardholder_name, 
+											  card_number=card_number, 
+											  card_expiry=card_expiry, 
+											  card_cvv=card_cvv, 
+											  description=description, 
+											  transactionType='authorize')
 
-def purchase(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
-    
-    makePayload_output = self.makePayload({ "amount":amount,
-                        "currency_code":currency_code,
-                        "card_type":card_type,
-                        "cardholder_name":cardholder_name,
-                        "card_number":card_number,
-                        "card_expiry":card_expiry,
-                        "card_cvv":card_cvv,
-                        "description":description,
-                        "transactionType":'purchase'})  
-    return self.makePrimaryTransaction( payload=makePayload_output['payload']);
+		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+
+	def purchase(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
+		
+		makePayload_output = self.makePayload(amount=amount,
+											  currency_code=currency_code,
+											  card_type=card_type,
+											  cardholder_name=cardholder_name,
+											  card_number=card_number,
+											  card_expiry=card_expiry,
+											  card_cvv=card_cvv,
+											  description=description,
+											  transactionType='purchase')
+
+		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
 
 
 
-def capture(self, amount=None, currency_code=None, transactionTag=None, transactionID=None, description=None):
-    
-    makePayload_output = self.makePayload( { "amount":amount,
-                        "currency_code":currency_code,
-                        "transactionTag":transactionTag,
-                        "transactionID":transactionID,
-                        "description":description,
-                        "transactionType":'capture' })
-    return self.makeSecondaryTransaction( self.transactionType, self.payload);
+	def capture(self, amount=None, currency_code=None, transactionTag=None, transactionID=None, description=None):
+		
+		makePayload_output = self.makePayload(amount=amount,
+											  currency_code=currency_code,
+											  transactionTag=transactionTag,
+											  transactionID=transactionID,
+											  description=description,
+											  transactionType='capture')
 
-def void(self,  payload ):
-    self.payload = payload
-    self.transactionType = "void"
-    return self.makeSecondaryTransaction(self.transactionType, self.payload);
+		return self.makeSecondaryTransaction(payload=makePayload_output['payload'], transactionID=makePayload_output['transactionID'])
 
-def refund(self,  payload):
-    self.payload = payload
-    self.transactionType = "refund"
-    return self.makeSecondaryTransaction(self.transactionType, self.payload);
-  ########### TeleCheck Methods #######################
+	def void(self,  payload ):
+		self.payload = payload
+		self.transactionType = "void"
+		return self.makeSecondaryTransaction(self.transactionType, self.payload);
+
+	def refund(self,  payload):
+		self.payload = payload
+		self.transactionType = "refund"
+		return self.makeSecondaryTransaction(self.transactionType, self.payload);
+
+
+	def makePrimaryTransaction(self, payload):
+		self.payload = payload
+		self.payeezy = http_authorization.PayeezyHTTPAuthorize(payeezy.apikey,payeezy.apisecret,payeezy.token,payeezy.url,payeezy.tokenurl)
+		return self.payeezy.makeCardBasedTransactionPostCall(self.payload)
+
+	def makeSecondaryTransaction(self, payload,transactionID):
+		self.payload = payload
+		self.transactionID = transactionID
+		self.payeezy = http_authorization.PayeezyHTTPAuthorize(payeezy.apikey,payeezy.apisecret,payeezy.token,payeezy.url,payeezy.tokenurl)
+		return self.payeezy.makeCaptureVoidRefundPostCall(self.payload,self.transactionID)
+
+	def makePayload(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None, transactionType=None, transactionTag=None, transactionID=None):
+
+		if amount is None:
+			raise ValueError, 'Amount cannot be nil'
+
+		if type(amount) is int:
+			amount = str(amount)
+
+		if currency_code is None:
+			raise ValueError, 'Currency code cannot be nil'
+
+		if transactionType is None:
+			raise ValueError, 'Internal Script Error - Transaction Type is NIL'
+
+		if currency_code.upper() != 'USD':
+			raise ValueError, 'currency code provided is not valid'
+
+		if description is None:
+			description = transactionType+'transaction for amount: '+amount
+
+		if (transactionType == ('authorize' or 'purchase')): 
+
+			if card_number is None:
+				raise ValueError, 'card number cannot be nil'
+
+			if type(card_number) is int:
+				card_number = str(card_number)
+
+			if cardholder_name is None:
+				cardholder_name = 'Not Provided'
+
+			if card_cvv is None:
+				raise ValueError, 'cvv number cannot be nil'
+
+			if type(card_cvv) is int:
+				card_cvv = str(card_cvv)
+
+			if card_expiry is None:
+				raise ValueError, 'card expiration cannot be nil. It has to be in MMYY format'
+
+			if type(card_expiry) is int:
+				card_expiry = str(card_expiry)
+
+			payload = { "merchant_ref": description, "transaction_type": transactionType, "method": "credit_card", "amount": amount, "currency_code": currency_code.upper(), "credit_card": { "type": card_type, "cardholder_name": cardholder_name, "card_number": card_number, "exp_date": card_expiry, "cvv": card_cvv } }
+
+		else:
+
+			if transactionID is None:
+				raise ValueError, 'Transaction ID cannot be nil'
+
+			if transactionTag is None:
+				raise ValueError, 'Transaction Tag cannot be nil'
+
+			if type(transactionTag) is int:
+				transactionTag = str(transactionTag)
+
+			payload = { "merchant_ref": description, "transaction_tag" : transactionTag, "transaction_type": transactionType, "method": "credit_card", "amount": amount, "currency_code": currency_code.upper() }
+
+		return {'payload':payload,'transactionID':transactionID}
+
+########### TeleCheck Methods #######################
   
 def teleCheckPurchaseVoid(self,transaction_type=None, amount=None, currency_code=None, merchant_ref=None, check_number=None, check_type=None, account_number=None, routing_number=None, 
   accountholder_name=None, customer_id_type=None,customer_id_number=None, client_email=None, gift_card_amount=None, vip=None, clerk_id=None,
@@ -110,7 +186,8 @@ def teleCheckTaggedRefund(self,  payload):
     return self.makeSecondaryTransaction(self.transactionType, self.payload);
   
   ########### ValueLink Methods - start #######################
-  
+
+ 
 def valueLinkPurchaseReloadPartialPurchase(self, transaction_type=None, amount=None, currency_code=None,  cardholder_name=None, cc_number=None ):
 
   makePayload_output = self.makePayload({"method":'value_link',
@@ -227,7 +304,7 @@ def processPurchaseCreditTransactionWithSoftDescDirectDebit(self, method=None, t
     })
   return self.makePrimaryTransaction(payload=makePayload_output['payload']);
       
-  def processPurchaseCreditTransactionWithL2L3DirectDebit(self, method=None, transaction_type=None, amount=None, currency_code=None,iban=None, mandate_ref=None, bic=None, name=None, city=None, country=None, email=None, type=None, number=None, street=None, state_province=None, zip_postal_code=None):
+def processPurchaseCreditTransactionWithL2L3DirectDebit(self, method=None, transaction_type=None, amount=None, currency_code=None,iban=None, mandate_ref=None, bic=None, name=None, city=None, country=None, email=None, type=None, number=None, street=None, state_province=None, zip_postal_code=None):
 
     makePayload_output = self.makePayload({  
       "method":'debit_card',
@@ -285,82 +362,96 @@ def processPurchaseCreditTransactionWithSoftDescDirectDebit(self, method=None, t
     return self.makePrimaryTransaction( payload=makePayload_output['payload'])
        
      
-    ########### German Direct Debit Methods - start #######################   
+########### German Direct Debit Methods - end #######################  
 
-def makePrimaryTransaction(self, payload):
-    self.payload = payload
-    self.payeezy = http_authorization.PayeezyHTTPAuthorize(payeezy.apikey,payeezy.apisecret,payeezy.token,payeezy.url)
-    return self.payeezy.makeCardBasedTransactionPostCall(self.payload)
+########### Timeout Reversal for Credit Card Payments - start #######################
+    
+def processPurchaseCreditTransactionWithTimeoutReversal(self, method=None, transaction_type=None, amount=None, iban=None, mandate_ref=None, bic=None, billing_name=None, city=None, country=None, email=None, phone_type=None, phone_number=None, street=None, state_province=None, zip_postal_code=None ):
 
-def makeSecondaryTransaction(self, payload,transactionID):
-    self.payload = payload
-    self.transactionID = transactionID
-    self.payeezy = http_authorization.PayeezyHTTPAuthorize(payeezy.apikey,payeezy.apisecret,payeezy.token,payeezy.url)
-    return self.payeezy.makeCaptureVoidRefundPostCall(self.payload,self.transactionID)
+    makePayload_output = self.makePayload({  "amount": "100",
+                                              "transaction_type": "authorize",
+                                              "method": "credit_card",
+                                              "currency_code": "GBP",
+                                              "credit_card": {
+                                                "type": "visa",
+                                                "cardholder_name": "John Smith",
+                                                "card_number": "4035874000424977",
+                                                "exp_date": "1218"
+                                              },
+                                              "billing_address": {
+                                                "city": "St. Louis",
+                                                "country": "US",
+                                                "email": "abc@main.com",
+                                                "phone": {
+                                                  "type": "home",
+                                                  "number": "212-515-1212"
+                                                 },
+                                                "street": "12115 LACKLAND",
+                                                "state_province": "MO",
+                                                "zip_postal_code": "63146 ",
+                                                },
+                                              "reversal_id": "Re-txn-12341202"
+                                         })    
 
-def makePayload(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None, transactionType=None, transactionTag=None, transactionID=None):
 
-    if amount is None:
-      raise ValueError, 'Amount cannot be nil'
+    return self.makePrimaryTransaction(payload=makePayload_output['payload']);
 
-    if type(amount) is int:
-      amount = str(amount)
+def processTimeoutReversal(self, method=None, transaction_type=None, amount=None, iban=None, mandate_ref=None, bic=None, billing_name=None, city=None, country=None, email=None, phone_type=None, phone_number=None, street=None, state_province=None, zip_postal_code=None ):
 
-    if currency_code is None:
-      raise ValueError, 'Currency code cannot be nil'
+    makePayload_output = self.makePayload({  "amount": "100",
+                                             "transaction_type": "void",
+                                             "method": "credit_card",
+                                             "currency_code": "GBP",
+                                             "reversal_id": "Re-txn-123412B2"
+                                         })    
 
-    if transactionType is None:
-      raise ValueError, 'Internal Script Error - Transaction Type is NIL'
 
-    if currency_code.upper() != 'USD':
-      raise ValueError, 'currency code provided is not valid'
+    return self.makePrimaryTransaction(payload=makePayload_output['payload']);
 
-    if description is None:
-      description = transactionType+'transaction for amount: '+amount
+########### TimeoutReversal - end #######################
 
-    if (transactionType == ('authorize' or 'purchase')): 
+########### DCC/Dynamic Pricing Lookup - end #######################
+def processDCCLookup(self, bin=None, amount=None):
 
-      if card_number is None:
-        raise ValueError, 'card number cannot be nil'
+    makePayload_output = self.makePayload({  "rate_type":"card_rate",
+                                              "bin":"559552",
+                                              "amount":"100"
+                                         })    
 
-      if type(card_number) is int:
-        card_number = str(card_number)
+    return self.makePrimaryTransaction(payload=makePayload_output['payload']);
 
-      if cardholder_name is None:
-        cardholder_name = 'Not Provided'
+def processDynamicPricingLookup(self, bin=None, amount=None):
 
-      if card_cvv is None:
-        raise ValueError, 'cvv number cannot be nil'
+    makePayload_output = self.makePayload({  "rate_type":"merchant_rate",
+                                             "currency_code":"USD",
+                                             "amount":"100"
+                                         })    
 
-      if type(card_cvv) is int:
-        card_cvv = str(card_cvv)
+    return self.makePrimaryTransaction(payload=makePayload_output['payload']);
 
-      if card_expiry is None:
-        raise ValueError, 'card expiration cannot be nil. It has to be in MMYY format'
+def processDCCPurchase(self, bin=None, amount=None):
 
-      if type(card_expiry) is int:
-        card_expiry = str(card_expiry)
+    makePayload_output = self.makePayload({  
+                                            "amount": "100",
+                                            "transaction_type": "Purchase",
+                                            "method": "credit_card",
+                                            "currency_code": "GBP",
+                                            "credit_card": {
+                                              "type": "mastercard",
+                                              "cardholder_name": "John Smith",
+                                              "card_number": "4389800000000006",
+                                              "exp_date": "1215",
+                                              "cvv": "006"
+                                            },
+                                           "rate_reference": {
+                                              "rate_id": "136752",
+                                              "dcc_accepted": "true"
+                                          }
+                                         })    
 
-      payload = { "merchant_ref": description, "transaction_type": transactionType, "method": "credit_card", "amount": amount, "currency_code": currency_code.upper(), "credit_card": { "type": card_type, "cardholder_name": cardholder_name, "card_number": card_number, "exp_date": card_expiry, "cvv": card_cvv } }
+    return self.makePrimaryTransaction(payload=makePayload_output['payload']);
 
-    else:
-
-      if transactionID is None:
-        raise ValueError, 'Transaction ID cannot be nil'
-
-      if transactionTag is None:
-        raise ValueError, 'Transaction Tag cannot be nil'
-
-      if type(transactionTag) is int:
-        transactionTag = str(transactionTag)
-
-      payload = { "merchant_ref": description, "transaction_tag" : transactionTag, "transaction_type": transactionType, "method": "credit_card", "amount": amount, "currency_code": currency_code.upper() }
-
-    return {'payload':payload,'transactionID':transactionID}
-
-    # Get FD token 
-    # Values for "type": "FDToken"  , "auth": "false" and "ta_token": "NOIW"
-    # For Authorize or Purchase, Just replace card number by FDtoken 
+########### DCC/Dynamic Pricing Lookup - end #######################
 
 def getFDTokenPayload(self,  FDtype = None, auth = None, ta_token = None, cardholder_name= None, card_number=None, card_expiry=None, card_cvv=None):
 
