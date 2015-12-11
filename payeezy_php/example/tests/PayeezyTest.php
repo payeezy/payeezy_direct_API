@@ -1,6 +1,7 @@
+
 <?php
 
-require_once('.\src\Payeezy.php');
+require_once('Payeezy.php');
 
 class PayeezyTest extends PHPUnit_Framework_TestCase
 {
@@ -10,11 +11,13 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
     public static function setUpBeforeClass(){
 
         self::$payeezy = new Payeezy();
-	self::$payeezy->setApiKey("y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a");
+        
+	    self::$payeezy->setApiKey("y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a");
     	self::$payeezy->setApiSecret("86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7");
     	self::$payeezy->setMerchantToken("fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6");
     	self::$payeezy->setTokenUrl("https://api-cert.payeezy.com/v1/transactions/tokens");  
-    	self::$payeezy->setUrl("https://api-cert.payeezy.com/v1/transactions");
+        self::$payeezy->setUrl("https://api-cert.payeezy.com/v1/transactions");
+
     }
 
     public function processInput($data) {
@@ -50,13 +53,27 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
             "card_number" => $card_number,
             "card_exp_date" => $card_expiry,
             "card_cvv" => $card_cvv,
+        
         );
 
         return $getTokenPayload;
 
     }
 
-    public function setPrimaryTxPayload(){
+   
+    
+
+    
+
+    public function testGetToken()
+    {
+        $primaryTxResponse_JSON = json_decode(self::$payeezy->tokenize($this->setTokenPayload()));
+        $this->assertEquals($primaryTxResponse_JSON->status,"success"); 
+    }
+
+    
+
+public function setPrimaryTxPayload(){
 
         $card_holder_name = $card_number = $card_type = $card_cvv = $card_expiry = $currency_code = $merchant_ref="";
 
@@ -64,10 +81,12 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
         $card_number = $this->processInput("4788250000028291");
         $card_type = $this->processInput("visa");
         $card_cvv = $this->processInput("123");
-        $card_expiry = $this->processInput("1218");
+        $card_expiry = $this->processInput("1250");
         $amount = $this->processInput("1200");
         $currency_code = $this->processInput("USD");
         $merchant_ref = $this->processInput("Astonishing-Sale");
+        $method = $this->processInput("credit_card");
+
 
         $primaryTxPayload = array(
             "amount"=> $amount,
@@ -78,6 +97,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
             "card_expiry" => $card_expiry,
             "merchant_ref" => $merchant_ref,
             "currency_code" => $currency_code,
+            "method"=> $method,
         );
 
         return $primaryTxPayload;
@@ -96,6 +116,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
         $currency_code = $this->processInput("USD");
         $merchant_ref = $this->processInput("Astonishing-Sale");
         $split_shipment = $this->processInput($split_shipment);
+        $method = $this->processInput("credit_card");
 
         if( is_null($split_shipment) )
         {
@@ -105,6 +126,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
                 "transaction_id" => $transaction_id,
                 "merchant_ref" => $merchant_ref,
                 "currency_code" => $currency_code,
+                "method"=> $method,
             );
         }
         else{
@@ -115,6 +137,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
                 "merchant_ref" => $merchant_ref,
                 "currency_code" => $currency_code,
                 "split_shipment" => $split_shipment,
+                "method"=> $method,
             );
         }
 
@@ -124,11 +147,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
     }
 
 
-    public function testGetToken()
-    {
-        $primaryTxResponse_JSON = json_decode(self::$payeezy->authorize($this->setTokenPayload()));
-        $this->assertEquals($primaryTxResponse_JSON->transaction_status,"approved");
-    }
+  
 
     public function testAuthorize()
     {
@@ -206,7 +225,7 @@ class PayeezyTest extends PHPUnit_Framework_TestCase
         $secondaryTxResponse_JSON = json_decode(self::$payeezy->split_shipment($secondaryTxPayload));
         $this->assertEquals($secondaryTxResponse_JSON->transaction_status,"approved");
         
-		// the second shipment is sent out. It is also the final shipment .. therefore 02/02
+        // the second shipment is sent out. It is also the final shipment .. therefore 02/02
         $secondaryTxPayload = $this->setSecondaryTxPayload($primaryTxResponse_JSON->transaction_id
                                                             ,$primaryTxResponse_JSON->transaction_tag
                                                             ,$split_amount
