@@ -2,11 +2,11 @@
 
 ## Steps to download and run the python code: 
 
-1. click on https://github.com/payeezy/payeezy_direct_API/archive/master.zip
-2. go to /payeezy_direct_API/payeezy_python/example
-3.python2 setup.py build
-4.python2 setup.py install
-5.python2 example.py
+* 1. click on https://github.com/payeezy/payeezy_direct_API/archive/master.zip
+* 2. go to /payeezy_direct_API/payeezy_python/example
+* 3.python2 setup.py build
+* 4.python2 setup.py install
+* 5.python2 example.py
 
 ## Feedback
 Payeezy IOS SDK is in active development. We appreciate the time you take to try it out and welcome your feedback!
