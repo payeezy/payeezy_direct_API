@@ -14,7 +14,7 @@ NOTE: The merchant/third party is responsible for PCI compliance and may be requ
 Java, PHP, Python,Ryby, nodeJS and Curl. 
 
 # Release notes:
-* Tokenised Transactions - Token is generated for the card and the transactions are made using the token.US merchants will receive Transarmor multi-use tokens and EU merchants will receive Datavault tokens.
+* Tokenised Transactions - Token is generated for the card and the transactions are made using the token.US merchants will receive Transarmor multi-use tokens and EU merchants will receive Data Vault tokens.
 * AVS,CVV, SoftDescriptor and 3DS Card Transactions - This feature is used to make credit card transactions [Non-Tokenised].<US merchants/EU Merchant
 * Dynamic Currency Conversion and Dynamic Pricing - <US merchants/EU Merchant>
 * TimeOutReversal - US merchants/EU Merchants> Any transaction can be reversed except for VOID.
