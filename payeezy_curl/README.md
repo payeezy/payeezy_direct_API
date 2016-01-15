@@ -2,8 +2,7 @@
 
 Quickly integrate Payeezy from First Data into your Curl calls.
 
-If you want to enable secure and convenient payments in your Curl app this guide will get you up and running within minutes. The Payeezy Service was created to simplify your integration with Android. 
-
+If you want to enable secure and convenient payments in your Curl app this guide will get you up and running within minutes.
 
 http://www.oracle.com/webfolder/technetwork/tutorials/obe/cloud/13_2/messagingservice/files/installing_curl_command_line_tool_on_windows.html
 *	You should have Curl installed with option to execute Curl using open SSL.
