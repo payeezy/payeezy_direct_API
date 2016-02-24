@@ -11,7 +11,7 @@ User Action: Buyer does a checkout on the merchant hosted site by clicking on bu
 NOTE: The merchant/third party is responsible for PCI compliance and may be required to provide First Data with additional documentation and/or their attestation of compliance
 
 # Payeezy supported language
-Java, PHP, Python,Ryby, nodeJS and Curl. 
+Java, PHP, Python,Ruby, nodeJS and Curl. 
 
 # Release notes:
 * Tokenised Transactions - Token is generated for the card and the transactions are made using the token.US merchants will receive Transarmor multi-use tokens and EU merchants will receive Data Vault tokens.
