@@ -64,14 +64,14 @@ class PayeezyHTTPAuthorize(object):
 		self.token = token
 		self.url = url
 		self.tokenurl = tokenurl
+		# cryptographically strong random number
+		self.nonce = str(int(os.urandom(16).encode('hex'),16))
+		self.timestamp = str(int(round(time.time() * 1000)))
 		self.timeout = 30 # max timeout is 30 sec
 
 	# HMAC Generation
 	def generateHMACAuthenticationHeader(self, payload):
-		# cryptographically strong random number
-		nonce = str(int(os.urandom(16).encode('hex'),16)) 
-		currentTimeInMilli = str(int(round(time.time() * 1000)))
-		messageData = self.apikey+nonce+currentTimeInMilli+self.token+payload
+		messageData = self.apikey+self.nonce+self.timestamp+self.token+payload
 		hmacInHex = hmac.new(self.apisecret, msg=messageData, digestmod=hashlib.sha256).hexdigest()
 		return b64encode(hmacInHex)
 
@@ -90,7 +90,7 @@ class PayeezyHTTPAuthorize(object):
 		response.mount('https://', MyAdapter())
 		self.payload = json.dumps(payload)
 		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
-		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':authorizationVal}, data=self.payload)
+		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'nonce':self.nonce,'timestamp':self.timestamp,'Authorization':authorizationVal}, data=self.payload)
 		return result
 
 
@@ -101,7 +101,7 @@ class PayeezyHTTPAuthorize(object):
 		self.url =  self.url + '/' + transactionID
 		self.payload = json.dumps(payload)
 		authorizationVal = self.generateHMACAuthenticationHeader(payload=self.payload)
-		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'Authorization':authorizationVal}, data=self.payload)
+		result = response.post(self.url, headers={'User-Agent':'Payeezy-Python','content-type': 'application/json','apikey':self.apikey,'token':self.token,'nonce':self.nonce,'timestamp':self.timestamp,'Authorization':authorizationVal}, data=self.payload)
 		return result
 
 		
