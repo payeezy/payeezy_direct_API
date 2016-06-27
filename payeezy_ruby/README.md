@@ -1,41 +1,34 @@
-# Payeezy
+Payeezy Ruby SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
 
-Integrate the Payeezy API with this ruby gem
+Steps to download and run the ruby code:
 
-# Payeezy ruby bindings 
+1. gem 'payeezy' and execute bundle 
+	        (or)
+2. gem install payeezy
+3. bundle exec rake test
 
-Payeezy ruby bindings
+Primary Transactions
+-------------------------
 
-# German Direct Debit Transactions (NEW) - 
-*	Purchase Void - POST API
-*	Purchase Refund - POST API
-*	Credit API
+1) Authorize
+2) Purchase
+3) Authorize_score
+4) Score_only (Applicable to all payment methods)
+5) Purchase_Score (Valid only for Value link)
 
-# TokenBased Transactions - 
-*	Generate Token with ta_token - auth false - GET API
-*	Generate Token with ta_token - auth true - GET API
-*	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
-*	Generate Token - Backward compatible -  GET API call
 
-## Installation
+Secondary Transactions
+-------------------------
+Secondary transactions like void, refund can be performed once a primary transaction is completed in case if you need to reverse a transaction.
 
-Add this line to your application's Gemfile:
+Tokenize Credit Cards
+-------------------------
+Credit Cards can be tokenized using our secure tokens api.
 
-    $ gem 'payeezy'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install payeezy
-
-## Usage
-
-Run the specs using 'bundle exec rake spec'
-
-Test cases can be run with 'bundle exec rake test'
+TokenBased Transactions -
+-------------------------
+Generate Token with ta_token - auth false - GET API                                                                                           
+Generate Token with ta_token - auth true - GET API
 
 ## Contributing
 
@@ -43,7 +36,8 @@ Test cases can be run with 'bundle exec rake test'
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+5. Create a new Pull Request  
+
 
 ## Feedback
 We appreciate the time you take to try out our sample code and welcome your feedback. Here are a few ways to get in touch:
