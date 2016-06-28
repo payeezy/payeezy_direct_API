@@ -1,39 +1,49 @@
-## Payeezy node.js Installation and Usage 
+Payeezy Node.js SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
 
-## Installation
+Steps to download and run the Node.js code:
 
-To install the payeezy node.js module using [`npm`](https://www.npmjs.com/):
+1. npm install payeezy
+2. npm install
+3. npm test
 
-`npm install payeezy`
+Primary Transactions
+-------------------------
 
-## Testing
+1) Authorize
+2) Purchase
+3) Authorize_score
+4) Score_only (Applicable to all payment methods)
+5) Purchase_Score (Valid only for Value link)
 
-Run the tests using [`npm`](https://www.npmjs.com/):
+Secondary Transactions
+-------------------------
+Secondary transactions like void, refund can be performed once a primary transaction is completed in case if you need to reverse a transaction.
 
-```bash
-$ npm install
-$ npm test
-```
+Tokenize Credit Cards
+-------------------------
+Credit Cards can be tokenized using our secure tokens api.
 
-## Usage
-
-Refer to test/payeezy-test.js for nodejs code samples on how to perform Authorize, Purchase, Capture, Void and Refund Transactions.
-Also includes sample code to tokenize a credit card and perform a token based Authorize transaction.
-
-
-## API Overview
-
-Refer to the [`documentation`](https://developer.payeezy.com/docs-sandbox) on the Payeezy Developer Portal
+TokenBased Transactions -
+-------------------------
+Generate Token with ta_token - auth false - GET API                                                                                        
+Generate Token with ta_token - auth true - GET API
 
 ## Contributing
 
-```bash
 1. Fork it 
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request  
-```
+
+Tokenize Credit Cards
+-------------------------
+Credit Cards can be tokenized using our secure tokens api.
+
+TokenBased Transactions -
+-------------------------
+Generate Token with ta_token - auth false - GET API                                                                                    
+Generate Token with ta_token - auth true - GET API
 
 ## Feedback
 We appreciate the time you take to try out our sample code and welcome your feedback. Here are a few ways to get in touch:
