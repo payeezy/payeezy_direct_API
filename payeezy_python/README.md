@@ -1,12 +1,44 @@
+Payeezy Python SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
+
+Steps to download and run the python code:
+
+1. click on https://github.com/payeezy/payeezy_direct_API/archive/master.zip
+2. go to /payeezy_direct_API/payeezy_python/example
+3. python2 setup.py build
+4. python2 setup.py install
+5. python2 example.py
+
+Primary Transactions
+-------------------------
+
+1) Authorize
+2) Purchase
+3) Authorize_score
+4) Score_only (Applicable to all payment methods)
+5) Purchase_Score (Valid only for Value link)
 
 
-## Steps to download and run the python code: 
+Secondary Transactions
+-------------------------
+Secondary transactions like void, refund can be performed once a primary transaction is completed in case if you need to reverse a transaction.
 
-* 1. click on https://github.com/payeezy/payeezy_direct_API/archive/master.zip
-* 2. go to /payeezy_direct_API/payeezy_python/example
-* 3.python2 setup.py build
-* 4.python2 setup.py install
-* 5.python2 example.py
+Tokenize Credit Cards
+-------------------------
+Credit Cards can be tokenized using our secure tokens api.
+
+TokenBased Transactions 
+-------------------------
+Generate Token with ta_token - auth false - GET API                                                                                    
+Generate Token with ta_token - auth true - GET API
+
+## Contributing
+
+1. Fork it 
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request  
+
 
 ## Feedback
 We appreciate the time you take to try out our sample code and welcome your feedback. Here are a few ways to get in touch:
@@ -16,6 +48,6 @@ We appreciate the time you take to try out our sample code and welcome your feed
 
 ## Terms of Use
 Terms and conditions for using Payeezy Direct API SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
- 
+
 ### License
 The Payeezy Direct API SDK is open source and available under the MIT license. See the LICENSE file for more info.
