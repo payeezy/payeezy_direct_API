@@ -1,17 +1,31 @@
-# Payeezy php bindings 
+Payeezy PHP SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
 
-Payeezy php bindings
+Steps to download and run the php code:
+1. setup PHPUnit framework.
+1. run 'phpunit tests'
 
-# German Direct Debit Transactions (NEW) - 
-*	Purchase Void - POST API
-*	Purchase Refund - POST API
-*	Credit API
+Primary Transactions
+-------------------------
 
-# TokenBased Transactions - 
-*	Generate Token with ta_token - auth false - GET API
-*	Generate Token with ta_token - auth true - GET API
-*	Generate Token without  ta_token & auth -  - GET API with 0$ Auth
-*	Generate Token - Backward compatible -  GET API call
+1) Authorize
+2) Purchase
+3) Authorize_score
+4) Score_only (Applicable to all payment methods)
+5) Purchase_Score (Valid only for Value link)
+
+
+Secondary Transactions
+-------------------------
+Secondary transactions like void, refund can be performed once a primary transaction is completed in case if you need to reverse a transaction.
+
+Tokenize Credit Cards
+-------------------------
+Credit Cards can be tokenized using our secure tokens api.
+
+TokenBased Transactions -
+-------------------------
+Generate Token with ta_token - auth false - GET API                                                                                            
+Generate Token with ta_token - auth true - GET API
 
 ## Contributing
 
@@ -30,6 +44,8 @@ We appreciate the time you take to try out our sample code and welcome your feed
 
 ## Terms of Use
 Terms and conditions for using Payeezy Direct API SDK: Please see [Payeezy Terms & conditions](https://developer.payeezy.com/terms-use)
- 
+
+
+
 ### License
 The Payeezy Direct API SDK is open source and available under the MIT license. See the LICENSE file for more info.
