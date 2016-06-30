@@ -1,3 +1,5 @@
+Getting started with Payeezy - https://github.com/payeezy/get_started_with_payeezy/blob/master/README.md.
+
 Payeezy Node.js SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
 
 Steps to download and run the Node.js code:
