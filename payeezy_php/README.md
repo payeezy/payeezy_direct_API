@@ -1,6 +1,6 @@
 Getting started with Payeezy - https://github.com/payeezy/get_started_with_payeezy/blob/master/README.md.
 
-Payeezy PHP SDK is built to make developers life easy to integrate with the Payeezy API (https://developers.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
+Payeezy PHP SDK is built to make developers life easy to integrate with the Payeezy API (https://developer.payeezy.com) for processing payements with various payment methods. Download the SDK, follow instructions to start testing against the sandbox environment with developer credentials.
 
 Steps to download and run the php code:                                                                                                      
 1. setup PHPUnit framework.                                                                                                                 
