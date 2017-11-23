@@ -210,6 +210,19 @@ class Payeezy
             'card_number'=> $args['card_number'],
             'exp_date'=> $args['card_expiry'],
             'cvv'=> $args['card_cvv'],
+          ),
+          'billing_address'=> array(
+            'name'=> $args['name'],
+            'city'=> $args['city'],
+            'country'=> $args['country'],
+            'email'=> $args['email'],
+            'street'=> $args['street'],
+            'state_province'=> $args['state_province'],
+            'zip_postal_code'=> $args['zip_postal_code'],
+            'phone'=> array(
+              'type'=> $args['type'],
+              'number'=> $args['number'],
+            )
           )
         );
       }
