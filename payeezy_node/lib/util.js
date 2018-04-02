@@ -1,5 +1,5 @@
 var CryptoJS = require("crypto-js");
-var util = module.exports = {
+module.exports = {
 		
 		getAuthorizationHeader: function (apiKey, apiSecret, payload, token, nonce, timestamp) {
 			var data = apiKey + nonce + timestamp + token + payload;
@@ -7,25 +7,19 @@ var util = module.exports = {
 			var header = new Buffer(digest.toString()).toString('base64');
 			return header;
 		},
-
-		buildURI: function (urlParams, path) {
-			
-		},
 		
 		isObject: function(obj) {
 			if (typeof obj =='object') {
 				return true;
-			} else {
-				return false;
 			}
+			return false;
 		},
 		
 		isFunction: function(fun) {
 			if (typeof fun =='function') {
 				return true;
-			} else {
-				return false;
 			}
+			return false;
 		},
 		
 		getArgumentTypes: function(args) {
@@ -36,5 +30,5 @@ var util = module.exports = {
 			argType = argType.substring(0, argType.length-1);
 			return argType;
 		}
-		
-}
+	
+};

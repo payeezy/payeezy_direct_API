@@ -1,9 +1,10 @@
 var util = require('./util');
 var Q = require('q');
+
 module.exports = function method(resProp) {
-	
+
 	return function() {
-		
+
 		var args = [].slice.call(arguments);
 		var logArgs = [].slice.call(arguments);
 		var callback = util.isFunction(args[args.length-1])? args.pop() : null;
@@ -31,9 +32,9 @@ module.exports = function method(resProp) {
 	    	requestData['transaction_type'] = resProp.tranType;
 	    }
 	    var requestJSON = JSON.stringify(requestData);
-	    
-	    var deferred = Q.defer(); 
-	    
+
+	    var deferred = Q.defer();
+
 	    this.sendRequest(resProp.method, uri, requestJSON, function (err, data) {
 	    	if (err) {
 	    		deferred.reject(err);
@@ -41,8 +42,8 @@ module.exports = function method(resProp) {
 	    		deferred.resolve(data);
 	    	}
 	    });
-	    
+
 	    return deferred.promise.nodeify(callback);
-	    
+
 	}
-}
+};

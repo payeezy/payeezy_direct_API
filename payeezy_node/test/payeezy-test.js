@@ -3,7 +3,7 @@ var apikey = 'y6pWAJNyJyjGv66IsVuWnklkKUPFbb0a';
 var apisecret = '86fbae7030253af3cd15faef2a1f4b67353e41fb6799f576b5093ae52901e6f7';
 var merchant_token = 'fdoa-a480ce8951daa73262734cf102641994c1e55e7cdf4c02b6';
 
-var payeezy = require('payeezy')(apikey, apisecret, merchant_token);
+var payeezy = require('../lib/payeezy')(apikey, apisecret, merchant_token);
 payeezy.version = "v1";
 
 
