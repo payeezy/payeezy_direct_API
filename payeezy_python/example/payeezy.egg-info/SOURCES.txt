@@ -1,4 +1,3 @@
-README.txt
 setup.py
 payeezy/__init__.py
 payeezy/api_methods.py

@@ -12,7 +12,8 @@ class Payeezy(object):
 	def __init__(self):
 		return None
 	
-	def authorize(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
+	def authorize(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, 
+                  card_expiry=None, card_cvv=None, description=None):
 		
 		makePayload_output = self.makePayload(amount=amount, 
 											  currency_code=currency_code, 
@@ -23,7 +24,24 @@ class Payeezy(object):
 											  card_cvv=card_cvv, 
 											  description=description, 
 											  transactionType='authorize')
-
+		
+		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
+	
+	def authorizeWithAddress(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, 
+                  card_expiry=None, card_cvv=None, description=None, street=None, city=None, state=None, zipcode=None,
+                  country=None, email=None):
+		
+		makePayload_output = self.makePayload(amount=amount, 
+											  currency_code=currency_code, 
+											  card_type=card_type, 
+											  cardholder_name=cardholder_name, 
+											  card_number=card_number, 
+											  card_expiry=card_expiry, 
+											  card_cvv=card_cvv, 
+											  description=description, 
+											  transactionType='authorize')
+		
+		makePayload_output = self.addAddress(makePayload_output, street, city, state, zipcode, country, email)
 		return self.makePrimaryTransaction( payload=makePayload_output['payload'])
 
 	def purchase(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None):
@@ -53,6 +71,21 @@ class Payeezy(object):
 
 		return self.makeSecondaryTransaction(payload=makePayload_output['payload'], transactionID=makePayload_output['transactionID'])
 
+	def captureWithAddress(self, amount=None, currency_code=None, transactionTag=None, transactionID=None, description=None,
+		street=None, city=None, state=None, zipcode=None, country=None, email=None):
+		
+		makePayload_output = self.makePayload(amount=amount,
+											  currency_code=currency_code,
+											  transactionTag=transactionTag,
+											  transactionID=transactionID,
+											  description=description,
+											  transactionType='capture')
+		
+		makePayload_output = self.addAddress(makePayload_output, street, city, state, zipcode, country, email)
+		return self.makeSecondaryTransaction(payload=makePayload_output['payload'], transactionID=makePayload_output['transactionID'])
+
+
+	
 	def void(self,  payload ):
 		self.payload = payload
 		self.transactionType = "void"
@@ -74,6 +107,29 @@ class Payeezy(object):
 		self.transactionID = transactionID
 		self.payeezy = http_authorization.PayeezyHTTPAuthorize(payeezy.apikey,payeezy.apisecret,payeezy.token,payeezy.url,payeezy.tokenurl)
 		return self.payeezy.makeCaptureVoidRefundPostCall(self.payload,self.transactionID)
+
+	def addAddress(self, payload, street=None, city=None, zipcode=None, state=None, country=None, email=None):
+		if street is None: 
+			raise ValueError, 'Street address cannot be nil'
+		if city is None: 
+			raise ValueError, 'City cannot be nil'
+		if zipcode is None:
+			raise ValueError, 'Zip code cannot be nil'
+		if type(zipcode) is int:
+			zipcode = str(zipcode)
+		if state is None:
+			raise ValueError, 'State cannot be nil'
+		if country is None:
+			raise ValueError, 'Country cannot be nil'
+		if email is None: 
+			raise ValueError, 'Email cannot be nil'
+
+		address = {"street": street, "city": city, "state_province": state, "zip_postal_code": zipcode, 
+			"country": country, "email": email}
+
+		payload["payload"]["billing_address"] = address
+		return payload
+
 
 	def makePayload(self, amount=None, currency_code=None, card_type=None, cardholder_name=None, card_number=None, card_expiry=None, card_cvv=None, description=None, transactionType=None, transactionTag=None, transactionID=None):
 
