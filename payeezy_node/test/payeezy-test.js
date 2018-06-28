@@ -200,7 +200,7 @@ function tokenBasedAuthorizeTransaction() {
             token_type: "FDToken",
             token_data: {
                 type: "visa",
-                value: "2537446225198291",
+                value: "2537446225198291", // token from payeezy.js
                 cardholder_name: "Tom Eck",
                 exp_date: "1030"
             }
