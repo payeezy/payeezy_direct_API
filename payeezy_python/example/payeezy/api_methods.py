@@ -95,7 +95,7 @@ class Payeezy(object):
 		if description is None:
 			description = transactionType+'transaction for amount: '+amount
 
-		if (transactionType == ('authorize' or 'purchase')): 
+		if transactionType == 'authorize' or transactionType == 'purchase': 
 
 			if card_number is None:
 				raise ValueError, 'card number cannot be nil'
