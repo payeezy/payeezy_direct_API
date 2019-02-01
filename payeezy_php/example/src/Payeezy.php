@@ -675,8 +675,12 @@ class Payeezy
 
     $response = curl_exec($request);
 
-	if (FALSE === $response)
-        echo curl_error($request);
+        if (FALSE === $response) {
+            $response = json_encode([
+                'request_error' => curl_error($request)
+            ]);
+            //echo curl_error($request);
+        }
 
     //$httpcode = curl_getinfo($request, CURLINFO_HTTP_CODE);
     curl_close($request);
@@ -687,6 +691,51 @@ class Payeezy
   /**
    * Payeezy
    *
+     * Get Transaction
+     * @param array $headers
+     * @return mixed
+     */
+
+    public  function getTransaction($headers)
+    {
+        $request = curl_init();
+        curl_setopt($request, CURLOPT_URL, self::$url);
+        curl_setopt($request, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($request, CURLOPT_HEADER, false);
+        curl_setopt($request, CURLOPT_HTTPHEADER, array(
+            'Content-Type: application/json',
+            'apikey:'.strval(self::$apiKey),
+            'token:'.strval(self::$merchantToken),
+            'Authorization:'.$headers['authorization'],
+            'nonce:'.$headers['nonce'],
+            'timestamp:'.$headers['timestamp'],
+        ));
+
+        $response = curl_exec($request);
+
+        if (FALSE === $response){
+            $response = json_encode([
+                'request_error' => curl_error($request)
+            ]);
+            //echo "<div style='color: red'>Request error: ".curl_error($request)."</div>";
+        }
+
+        $httpcode = curl_getinfo($request, CURLINFO_HTTP_CODE);
+        if($httpcode != 200){
+            if($result = json_decode($response, true)){
+                $result['http_response_code'] = $httpcode;
+                $response = json_encode($result);
+            }
+            //echo "<div style='color: red'>Response code: ".$httpcode."</div>";
+        }
+        curl_close($request);
+
+        return $response;
+    }
+
+    /**
+     * Payeezy
+     *
    * Authorize Transaction
    */
 
@@ -1011,5 +1060,63 @@ class Payeezy
     $headerArray = $this->hmacAuthorizationToken($payload);
     return $this->postTransaction($payload, $headerArray);
   }
+
+    /**
+     * Requests report
+     * @param string $from
+     * @param string $to
+     * @param string $page
+     * @param string $limit
+     * @return mixed
+     * @see https://developer.payeezy.com/payeezy-api/apis/get/transactions
+     */
+    public function report($from, $to, $page, $limit){
+        $data = array(
+            'start_date' => $from,
+            'end_date' => $to,
+            'offset' => $page,
+            'limit' => $limit
+        );
+        $query_string = http_build_query($data);
+        self::$url = self::$baseURL."?".$query_string;
+        $headerArray = $this->hmacAuthorizationToken('');
+        return $this->getTransaction($headerArray);
+    }
+
+    /**
+     * Search for events
+     * @param string $from format is yyyy-MM-dd
+     * @param string $to format is yyyy-MM-dd
+     * @param int $offset
+     * @param int $limit
+     * @param string $eventType
+     * @return mixed
+     * @see https://developer.payeezy.com/payeezy-api/apis/get/events
+     */
+    public function search_event($from, $to, $offset, $limit, $eventType = 'TRANSACTION_STATUS'){
+        $data = array(
+            'eventType' => $eventType,
+            'from' => $from,
+            'to' => $to,
+            'offset' => $offset,
+            'limit' => $limit
+        );
+        $query_string = http_build_query($data);
+        self::$url = str_replace('transactions', 'events', self::$baseURL)."?".$query_string;
+        $headerArray = $this->hmacAuthorizationToken('');
+        return $this->getTransaction($headerArray);
+    }
+
+    /**
+     * Get event info data
+     * @param string $id Event ID
+     * @return mixed
+     * @see https://developer.payeezy.com/payeezy-api/apis/get/events/%7Bid%7D
+     */
+    public function get_event_by_id($id){
+        self::$url = str_replace('transactions', 'events', self::$baseURL)."/".$id;
+        $headerArray = $this->hmacAuthorizationToken('');
+        return $this->getTransaction($headerArray);
+    }
 
 }//end of class
